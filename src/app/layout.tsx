@@ -35,7 +35,12 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = await auth();
+  let session = null;
+  try {
+    session = await auth();
+  } catch {
+    // Sem AUTH_SECRET (ou outro erro de config) — segue como deslogado.
+  }
   return (
     <html lang="pt-BR" className={jakarta.variable}>
       <head>
