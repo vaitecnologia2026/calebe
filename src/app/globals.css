@@ -6,6 +6,7 @@
    Brand — Calebe Imóveis
    Tipografia única: Plus Jakarta Sans (300-800). Moderna, premium, tecnológica.
    Paleta: Navy (primary) + Gold (accent) + Sand (warm neutral).
+   Utility classes espelham exatamente demo-funcionalidades.html.
    ============================================================================= */
 
 @layer base {
@@ -30,11 +31,11 @@
 
   body {
     font-family: var(--font-sans), "Plus Jakarta Sans", -apple-system, system-ui, sans-serif;
-    color: var(--app-fg);
-    background-color: var(--app-bg);
+    color: #E8EAEF;
+    background-color: #0B0E13;
     background-image:
-      radial-gradient(circle at 100% 0%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 0% 100%, rgba(44, 86, 128, 0.18) 0%, transparent 60%),
+      radial-gradient(circle at 100% 0%, rgba(201, 169, 97, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(44, 86, 128, 0.22) 0%, transparent 60%),
       linear-gradient(180deg, #081A2E 0%, #0B0E13 45%, #04101F 100%);
     background-attachment: fixed;
     min-height: 100dvh;
@@ -46,7 +47,7 @@
     color: #04101F;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, .font-display {
     font-family: var(--font-sans), "Plus Jakarta Sans", sans-serif;
     letter-spacing: -0.028em;
     font-weight: 700;
@@ -66,10 +67,26 @@
     height: 1px;
   }
 
-  .hairline { border-color: var(--app-border); }
-  .hairline-strong { border-color: var(--app-border-strong); }
+  .divider-thin { height: 1px; background: #232A37; }
 
-  /* META / LABELS / PILLS — Plus Jakarta uppercase com tracking */
+  .hairline { border-color: #232A37; }
+  .hairline-strong { border-color: #2F3848; }
+
+  /* ========== META / LABELS ========== */
+  .meta {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.7rem;
+    color: rgba(245, 239, 228, 0.55);
+  }
+  .meta-gold {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.7rem;
+    color: #C9A961;
+  }
   .meta-label {
     @apply text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-sand-100/60;
   }
@@ -77,37 +94,594 @@
     @apply text-xs font-semibold text-gold-400 tracking-[0.04em];
   }
 
+  /* ========== PILLS ========== */
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-gold-300;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(201, 169, 97, 0.22);
+    background: rgba(201, 169, 97, 0.06);
+    padding: 0.3rem 0.85rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #DEB96D;
   }
   .pill-section {
-    @apply inline-block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-400/80;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(201, 169, 97, 0.8);
   }
 
+  /* ========== BUTTONS ========== */
   .btn-base {
-    @apply inline-flex items-center justify-center gap-2 font-semibold tracking-[0.04em] text-[0.86rem] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded-[4px];
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 0.88rem;
+    transition: all 0.3s;
+    border-radius: 4px;
+  }
+  .btn-base:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(201, 169, 97, 1), 0 0 0 4px #04101F;
+  }
+  .btn-base:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
   .btn-gold {
-    @apply btn-base bg-gold-gradient text-navy-950 px-7 py-[0.85rem] shadow-gold-glow hover:shadow-elev-3 hover:-translate-y-[1px] active:translate-y-0;
+    background: linear-gradient(135deg, #DEB96D, #C9A961 45%, #B58E3E);
+    color: #04101F;
+    padding: 0.9rem 1.75rem;
+    box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.25), 0 8px 28px -12px rgba(201, 169, 97, 0.35);
+    font-weight: 700;
+  }
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
   }
   .btn-outline {
-    @apply btn-base border border-gold-400/40 text-gold-300 px-7 py-[0.85rem] hover:bg-gold-400/[0.08] hover:border-gold-400/70;
+    background: transparent;
+    color: #DEB96D;
+    padding: 0.9rem 1.75rem;
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    font-weight: 600;
+  }
+  .btn-outline:hover {
+    background: rgba(201, 169, 97, 0.08);
+    border-color: rgba(201, 169, 97, 0.7);
   }
   .btn-navy {
     @apply btn-base bg-navy-700 text-sand-50 px-7 py-[0.85rem] hover:bg-navy-600 border border-navy-600;
   }
 
+  /* ========== FORM FIELDS ========== */
   .field-label {
-    @apply block text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-sand-100/70 mb-2;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(245, 239, 228, 0.7);
+    margin-bottom: 0.5rem;
   }
   .field-input {
-    @apply w-full bg-app-subtle/70 border hairline rounded-[4px] px-4 py-3 text-sand-50 placeholder:text-sand-100/25 focus:border-gold-400/70 focus:bg-app-subtle focus:outline-none focus:ring-0 transition-colors text-[0.95rem] font-normal;
+    width: 100%;
+    background: rgba(22, 27, 37, 0.7);
+    border: 1px solid #232A37;
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    color: #E8EAEF;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 0.95rem;
+  }
+  .field-input::placeholder { color: rgba(245, 239, 228, 0.25); }
+  .field-input:focus {
+    outline: none;
+    border-color: rgba(201, 169, 97, 0.7);
+    background: #161B25;
+  }
+  .field-input.error { border-color: rgba(184, 50, 50, 0.6); }
+
+  /* ========== CARDS ========== */
+  .card {
+    background: #131720;
+    border: 1px solid #232A37;
+    border-radius: 2px;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .card:hover { border-color: rgba(201, 169, 97, 0.25); }
+
+  /* ========== SCREEN (fade animation) ========== */
+  .screen { display: none; animation: fadeIn 0.35s ease; }
+  .screen.active { display: block; }
+
+  /* ========== NAV / SIDEBAR BUTTONS ========== */
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245, 239, 228, 0.65);
+    transition: color 0.2s, background 0.2s;
+    border-radius: 2px;
+  }
+  .nav-btn:hover { color: #E8EAEF; }
+  .nav-btn.active {
+    color: #04101F;
+    background: #C9A961;
+    font-weight: 600;
   }
 
-  .card {
-    @apply bg-app-elevated border hairline rounded-[4px] transition-colors;
+  .sidebar-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    color: rgba(245, 239, 228, 0.7);
+    border-radius: 2px;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: left;
   }
-  .card:hover {
-    @apply border-gold-400/20;
+  .sidebar-btn:hover {
+    color: #E8EAEF;
+    background: rgba(201, 169, 97, 0.06);
+  }
+  .sidebar-btn.active {
+    color: #C9A961;
+    background: rgba(201, 169, 97, 0.1);
+    border-left: 2px solid #C9A961;
+    padding-left: calc(1rem - 2px);
+  }
+
+  .bottom-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+    padding: 0.75rem 0;
+    color: rgba(245, 239, 228, 0.5);
+    font-weight: 500;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+  }
+  .bottom-tab.active { color: #C9A961; }
+  .bottom-tab:hover { color: #E8EAEF; }
+
+  /* Corretor sidebar links (refatorado abril/2026) */
+  .cor-sb-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 4px;
+    width: 100%;
+    text-align: left;
+    font-size: 0.88rem;
+    color: rgba(245, 239, 228, 0.72);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .cor-sb-link:hover {
+    color: #F5EFE4;
+    background: rgba(201, 169, 97, 0.06);
+  }
+  .cor-sb-link.active {
+    color: #DEB96D;
+    background: rgba(201, 169, 97, 0.1);
+  }
+  .cor-sb-link.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 2px;
+    background: linear-gradient(180deg, #DEB96D, #C9A961);
+    border-radius: 2px;
+  }
+  .cor-sb-link .sb-badge {
+    margin-left: auto;
+    background: rgba(201, 169, 97, 0.15);
+    color: #DEB96D;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 9999px;
+    letter-spacing: 0;
+  }
+  .cor-sb-featured {
+    border: 1px solid rgba(201, 169, 97, 0.28);
+    background: rgba(201, 169, 97, 0.04);
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+  }
+  .cor-sb-featured:hover {
+    border-color: rgba(201, 169, 97, 0.5);
+    background: rgba(201, 169, 97, 0.08);
+  }
+  .cor-sb-featured .cor-sb-link {
+    padding: 0.4rem;
+    color: #DEB96D;
+    font-weight: 600;
+  }
+  .cor-sb-featured .cor-sb-link::before { display: none; }
+
+  /* ========== KPI BLOCKS ========== */
+  .kpi {
+    background: #131720;
+    border: 1px solid #232A37;
+    border-radius: 2px;
+    padding: 1.25rem 1.5rem;
+  }
+  .kpi-label {
+    font-weight: 500;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(245, 239, 228, 0.55);
+  }
+  .kpi-value {
+    font-family: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+    font-size: 2.75rem;
+    line-height: 1;
+    color: #E8EAEF;
+    margin-top: 0.45rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+  }
+  .kpi-hint {
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: #C9A961;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ========== STATUS PILLS ========== */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .status-new      { background: rgba(44, 86, 128, 0.18);   color: #87A0B9; border: 1px solid rgba(44, 86, 128, 0.4); }
+  .status-pending  { background: rgba(201, 169, 97, 0.12);  color: #DEB96D; border: 1px solid rgba(201, 169, 97, 0.3); }
+  .status-approved { background: rgba(15, 123, 92, 0.15);   color: #5FD1A8; border: 1px solid rgba(15, 123, 92, 0.35); }
+  .status-denied   { background: rgba(184, 50, 50, 0.12);   color: #E88888; border: 1px solid rgba(184, 50, 50, 0.3); }
+  .status-gold     { background: rgba(201, 169, 97, 0.18);  color: #DEB96D; border: 1px solid rgba(201, 169, 97, 0.35); }
+
+  /* ========== CATEGORY BADGES (Bronze/Prata/Ouro/Diamante) ========== */
+  .cat-bronze   { background: linear-gradient(135deg, #6B5223, #8E6D2D); color: #FBF9F4; }
+  .cat-silver   { background: linear-gradient(135deg, #B3BAC8, #8A93A6); color: #04101F; }
+  .cat-gold     { background: linear-gradient(135deg, #DEB96D, #C9A961); color: #04101F; }
+  .cat-diamond  { background: linear-gradient(135deg, #DCE5EE, #87A0B9, #547B9A); color: #04101F; }
+  .cat-badge {
+    display: inline-flex;
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* ========== CHAT MESSAGES ========== */
+  .msg-in {
+    align-self: flex-start;
+    background: #161B25;
+    color: #E8EAEF;
+    border-top-left-radius: 2px;
+    border: 1px solid #232A37;
+  }
+  .msg-out {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #DEB96D, #C9A961);
+    color: #04101F;
+    border-top-right-radius: 2px;
+  }
+  .msg {
+    padding: 0.6rem 0.9rem;
+    max-width: 80%;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* ========== TOAST ========== */
+  .toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #131720;
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    padding: 1rem 1.5rem;
+    border-radius: 2px;
+    color: #DEB96D;
+    font-weight: 500;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .toast.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ========== ICONS (Lucide) ========== */
+  .icon    { width: 16px; height: 16px; stroke-width: 1.5; flex-shrink: 0; display: inline-flex; }
+  .icon-sm { width: 14px; height: 14px; stroke-width: 1.5; flex-shrink: 0; }
+  .icon-lg { width: 20px; height: 20px; stroke-width: 1.5; flex-shrink: 0; }
+  .icon-xl { width: 24px; height: 24px; stroke-width: 1.5; flex-shrink: 0; }
+
+  /* ========== TABLES (tbl-head, tbl-row) ========== */
+  .tbl-head {
+    background: rgba(22, 27, 37, 0.6);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(245, 239, 228, 0.55);
+  }
+  .tbl-row { border-top: 1px solid #232A37; }
+  .tbl-row:hover { background: rgba(22, 27, 37, 0.4); }
+
+  /* ========== STEP NAV (venda modal) ========== */
+  .step-nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #232A37;
+    background: rgba(11, 14, 19, 0.5);
+  }
+  .step-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(245, 239, 228, 0.55);
+    transition: all 0.2s;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .step-btn:hover {
+    color: #F5EFE4;
+    background: rgba(201, 169, 97, 0.08);
+  }
+  .step-btn.active {
+    color: #04101F;
+    background: linear-gradient(135deg, #DEB96D, #C9A961);
+  }
+  .step-btn .step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: rgba(245, 239, 228, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+  }
+  .step-btn.active .step-num {
+    background: rgba(4, 16, 31, 0.15);
+    color: #04101F;
+  }
+  .step-btn.completed:not(.active) {
+    color: #5FD1A8;
+    background: rgba(15, 123, 92, 0.08);
+  }
+  .step-btn.completed:not(.active) .step-num {
+    background: rgba(15, 123, 92, 0.3);
+    color: #5FD1A8;
+  }
+
+  .form-section { display: none; }
+  .form-section.active { display: block; }
+
+  .doc-slot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(22, 27, 37, 0.5);
+    border: 1px solid #232A37;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+  .doc-slot:hover { border-color: rgba(201, 169, 97, 0.4); }
+  .doc-slot.uploaded {
+    border-color: rgba(15, 123, 92, 0.4);
+    background: rgba(15, 123, 92, 0.06);
+  }
+
+  /* ========== JURÍDICO — tabs de contratos finalizados ========== */
+  .jur-fin-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245, 239, 228, 0.6);
+    border-radius: 3px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .jur-fin-tab:hover { color: #F5EFE4; }
+  .jur-fin-tab.active {
+    background: rgba(201, 169, 97, 0.15);
+    color: #DEB96D;
+    box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.25);
+  }
+  .jur-fin-count {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    background: rgba(245, 239, 228, 0.1);
+    border-radius: 9999px;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+  .jur-fin-tab.active .jur-fin-count {
+    background: rgba(201, 169, 97, 0.3);
+    color: #04101F;
+  }
+
+  /* ========== LOGO ========== */
+  .logo-calebe {
+    filter: brightness(0) invert(1) brightness(1.1);
+    height: 28px;
+    width: auto;
+  }
+  .logo-calebe.sm { height: 20px; }
+
+  /* ========== STAGE DOT ========== */
+  .stage-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #C9A961;
+    margin-right: 0.4rem;
+  }
+
+  /* ========== TYPOGRAPHY (headline, body, eyebrow) ========== */
+  .headline {
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+  .body-text {
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(245, 239, 228, 0.72);
+  }
+  .eyebrow {
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(201, 169, 97, 0.85);
+  }
+
+  /* ========== SKELETON ========== */
+  .skeleton {
+    background: linear-gradient(90deg, #161B25, #1E242F, #161B25);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* ========== SCROLL X ========== */
+  .scroll-x::-webkit-scrollbar { height: 6px; }
+  .scroll-x::-webkit-scrollbar-thumb {
+    background: rgba(197, 155, 95, 0.3);
+    border-radius: 3px;
+  }
+
+  /* ========== SPIN ========== */
+  .spin { animation: spin 1s linear infinite; }
+
+  /* ========== APP SHELL (SaaS full-width quando logado) ========== */
+  .app-shell {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-content {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+  }
+  @media (min-width: 768px)  { .app-content { padding: 1.25rem 1.5rem; } }
+  @media (min-width: 1024px) { .app-content { padding: 1.5rem 2rem; } }
+  @media (min-width: 1280px) { .app-content { padding: 1.75rem 2.5rem; } }
+  @media (min-width: 1536px) { .app-content { padding: 2rem 3rem; } }
+  @media (min-width: 1920px) { .app-content { padding: 2.5rem 4rem; } }
+  @media (min-width: 2560px) { .app-content { padding: 3rem 6rem; } }
+  .app-sidebar { flex-shrink: 0; }
+
+  body.in-app .container-site.app-main-override {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* ========== RESPONSIVIDADE TV / 2K ========== */
+  @media (min-width: 1920px) {
+    .container-site { max-width: 1680px; }
+    body { font-size: 1.02rem; }
+    .kpi-value { font-size: 3rem; }
+    .kpi-label { font-size: 0.82rem; }
+    .kpi { padding: 1.75rem 1.5rem; }
+    .card { border-radius: 6px; }
+    .app-content h1 { font-size: clamp(2rem, 2.4vw, 3rem); }
+    .app-content h2 { font-size: clamp(1.5rem, 1.8vw, 2.25rem); }
+    .app-content table th,
+    .app-content table td { padding: 1.1rem 1.5rem; font-size: 0.95rem; }
+  }
+  @media (min-width: 2560px) {
+    .container-site { max-width: 1920px; }
+    body { font-size: 1.08rem; }
+    .kpi { padding: 2.25rem 2rem; }
+    .kpi-value { font-size: 3.5rem; }
+    .app-content h1 { font-size: clamp(2.5rem, 2.2vw, 3.75rem); }
+  }
+
+  @media (max-width: 767px) {
+    .app-content { padding: 1rem; }
+    .kpi { padding: 1rem; }
+    .kpi-value { font-size: 1.75rem; }
   }
 }
+
+/* ========== KEYFRAMES ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shimmer {
+  0%   { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== DETAILS/SUMMARY ========== */
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+details summary::-webkit-details-marker { display: none; }
