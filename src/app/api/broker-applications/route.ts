@@ -69,7 +69,7 @@ export async function POST(req: Request) {
       currentAgency: data.currentAgency || null,
       yearsMarket: data.yearsMarket ?? null,
       instagram: data.instagram || null,
-      credentialFileUrl: data.credentialFileUrl,
+      credentialFileUrl: data.credentialFileUrl ?? "",
       notes: data.notes || null,
       ipAddress,
       userAgent

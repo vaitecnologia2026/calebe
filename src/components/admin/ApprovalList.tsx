@@ -17,7 +17,7 @@ type Application = {
   currentAgency: string | null;
   yearsMarket: number | null;
   instagram: string | null;
-  credentialFileUrl: string;
+  credentialFileUrl: string | null;
   notes: string | null;
   status: BrokerApprovalStatus;
   creciValidated: CreciStatus;
@@ -302,14 +302,20 @@ function ApprovalDrawer({
                 <p className="text-[0.65rem] uppercase tracking-[0.14em] font-medium text-sand-100/55 mb-2">
                   Credencial CRECI
                 </p>
-                <a
-                  href={a.credentialFileUrl}
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-flex items-center gap-2 text-sm text-gold-300 hover:text-gold-200 underline"
-                >
-                  Abrir arquivo enviado →
-                </a>
+                {a.credentialFileUrl ? (
+                  <a
+                    href={a.credentialFileUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-2 text-sm text-gold-300 hover:text-gold-200 underline"
+                  >
+                    Abrir arquivo enviado →
+                  </a>
+                ) : (
+                  <p className="text-sm text-sand-100/60 italic">
+                    Não anexado — solicite ao candidato por WhatsApp antes de aprovar.
+                  </p>
+                )}
               </div>
 
               <div className="divider-gold my-2" />
