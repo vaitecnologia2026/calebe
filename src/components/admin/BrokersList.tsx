@@ -188,10 +188,33 @@ function BrokerDrawer({ broker, onClose }: { broker: Broker; onClose: () => void
   const [isActive, setIsActive] = useState(broker.isActive);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const [resetting, setResetting] = useState(false);
+  const [resetResult, setResetResult] = useState<{ email: string; tempPassword: string } | null>(
+    null
+  );
 
   const categoryChanged = category !== broker.category;
   const statusChanged = isActive !== broker.isActive;
   const anyChange = categoryChanged || statusChanged;
+
+  async function resetPassword() {
+    if (!confirm(`Gerar nova senha temporária para ${broker.name}? A senha atual será invalidada.`))
+      return;
+    setError(null);
+    setResetting(true);
+    try {
+      const res = await fetch(`/api/admin/brokers/${broker.id}/reset-password`, {
+        method: "POST"
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Falha ao resetar senha.");
+      setResetResult({ email: data.email, tempPassword: data.tempPassword });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Erro inesperado.");
+    } finally {
+      setResetting(false);
+    }
+  }
 
   async function save() {
     setError(null);
@@ -316,6 +339,50 @@ function BrokerDrawer({ broker, onClose }: { broker: Broker; onClose: () => void
               <p className="text-xs text-sand-100/60 mt-2">
                 Corretor inativo não consegue logar nem recebe leads na distribuição.
               </p>
+            )}
+          </div>
+
+          <div>
+            <label className="field-label">Senha do corretor</label>
+            {resetResult ? (
+              <div className="card p-4 border-gold-400/40 bg-gold-400/5">
+                <p className="text-[0.65rem] uppercase tracking-[0.14em] font-semibold text-gold-300 mb-2">
+                  Nova senha gerada — copie agora
+                </p>
+                <div className="space-y-1 text-sm font-mono bg-app-subtle/60 p-3 rounded-[2px]">
+                  <div>
+                    <span className="text-sand-100/55">E-mail:</span> {resetResult.email}
+                  </div>
+                  <div>
+                    <span className="text-sand-100/55">Senha:</span>{" "}
+                    <strong className="text-gold-300">{resetResult.tempPassword}</strong>
+                  </div>
+                </div>
+                <p className="text-xs text-sand-100/55 mt-3">
+                  Senha anterior invalidada. Envie ao corretor por WhatsApp.
+                </p>
+                <button
+                  className="mt-3 text-[0.72rem] uppercase tracking-[0.12em] font-semibold text-gold-300 hover:text-gold-200"
+                  onClick={() => {
+                    navigator.clipboard?.writeText(
+                      `E-mail: ${resetResult.email}\nSenha: ${resetResult.tempPassword}`
+                    );
+                    setSuccess("Copiado para a área de transferência.");
+                  }}
+                >
+                  Copiar credenciais →
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className="btn-base btn-outline w-full"
+                style={{ padding: ".65rem 1rem" }}
+                onClick={resetPassword}
+                disabled={resetting || pending}
+              >
+                {resetting ? "Gerando..." : "🔑 Gerar nova senha temporária"}
+              </button>
             )}
           </div>
 
