@@ -10,8 +10,14 @@ const credentialsSchema = z.object({
   password: z.string().min(6)
 });
 
+if (!process.env.AUTH_SECRET) {
+  process.env.AUTH_SECRET = "dev-fallback-secret-CHANGE-ME-in-production-env-vars==";
+}
+
 export const { auth, handlers, signIn, signOut } = NextAuth({
   ...authConfig,
+  secret: process.env.AUTH_SECRET,
+  trustHost: true,
   providers: [
     Credentials({
       credentials: {
