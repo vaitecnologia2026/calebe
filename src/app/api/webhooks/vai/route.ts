@@ -24,7 +24,7 @@ export async function POST(req: Request) {
       data: {
         source: "vai",
         endpoint: "/api/webhooks/vai",
-        rawPayload: safeJson(raw),
+        rawPayload: safeJson(raw) as never,
         signature,
         ipAddress: ip,
         status: "REJECTED",
