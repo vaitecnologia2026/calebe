@@ -91,7 +91,7 @@
     @apply btn-base bg-gold-gradient text-navy-950 px-7 py-[0.85rem] shadow-gold-glow hover:shadow-elev-3 hover:-translate-y-[1px] active:translate-y-0;
   }
   .btn-outline {
-    @apply btn-base border border-gold-400/40 text-gold-300 px-7 py-[0.85rem] hover:bg-gold-400/8 hover:border-gold-400/70;
+    @apply btn-base border border-gold-400/40 text-gold-300 px-7 py-[0.85rem] hover:bg-gold-400/[0.08] hover:border-gold-400/70;
   }
   .btn-navy {
     @apply btn-base bg-navy-700 text-sand-50 px-7 py-[0.85rem] hover:bg-navy-600 border border-navy-600;
