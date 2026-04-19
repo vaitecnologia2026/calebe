@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       data: {
         source: "unknown",
         endpoint: "/api/webhooks/leads",
-        rawPayload: safeParse(raw),
+        rawPayload: safeParse(raw) as never,
         signature,
         ipAddress: ip,
         status: "REJECTED",
