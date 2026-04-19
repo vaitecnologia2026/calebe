@@ -13,7 +13,8 @@ const config: Config = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
-      tv: "1920px"   // Padrão VAI: TV/4K
+      tv: "1920px",  // Padrão VAI — TV full HD
+      uw: "2560px"   // Ultrawide / QHD+ / 2K monitors
     },
     extend: {
       colors: {
@@ -78,11 +79,11 @@ const config: Config = {
         mono: ["ui-monospace", "SF Mono", "Menlo", "monospace"]
       },
       letterSpacing: {
-        "display": "-0.02em",
-        "display-tight": "-0.03em",
-        "mono-wide": "0.08em",
-        "mono-xwide": "0.12em",
-        "mono-label": "0.2em"
+        "display": "-0.015em",
+        "display-tight": "-0.02em",
+        "mono-wide": "0.1em",
+        "mono-xwide": "0.14em",
+        "mono-label": "0.18em"
       },
       boxShadow: {
         "elev-1": "0 1px 2px rgba(0,0,0,.35), 0 1px 4px rgba(0,0,0,.25)",
@@ -93,8 +94,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(135deg, #DEB96D 0%, #C9A961 45%, #B58E3E 100%)",
-        "navy-hero": "radial-gradient(circle at 100% 0%, rgba(201,169,97,0.18) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(44,86,128,0.4) 0%, transparent 60%)",
-        "navy-gradient": "linear-gradient(180deg, #081A2E 0%, #0E2A47 45%, #04101F 100%)"
+        "navy-hero": "radial-gradient(circle at 100% 0%, rgba(201,169,97,0.12) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(44,86,128,0.22) 0%, transparent 60%)",
+        "navy-gradient": "linear-gradient(180deg, #081A2E 0%, #0B0E13 45%, #04101F 100%)"
       },
       maxWidth: {
         "container": "1240px",
