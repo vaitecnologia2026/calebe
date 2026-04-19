@@ -1,0 +1,3627 @@
+<script>window.location.href='https://www.calebeimoveisitapema.com.br/pg_404.php?bsimob=calebe'</script><script type="text/javascript">function setCookieModal() {
+		var dateM = new Date();
+		var expires = new Date(dateM.setMonth(dateM.getMonth()+1));
+	  	document.cookie = "cookiesmodal=1;expires="+expires+";path=/";
+	  	document.getElementById("cookiesmodal").style.display = "none";
+	  	document.getElementById("modal").style.display = "none";
+	  	var element = document.getElementById("modalMinimizado");
+			element.classList.add("active");
+	}	
+	function ativarCookies() {
+		$(".onoffswitch-checkbox").prop('checked',true);
+	}
+	function rejeitarCookies() {
+		$(".onoffswitch-checkbox").prop('checked',false);
+	}
+	function aceitarCookies(){
+		var dateM = new Date();
+		var expires = new Date(dateM.setMonth(dateM.getMonth()+1));
+
+		$(".onoffswitch-preferencias").each(function (index, val){
+			var cookieName = $(this).attr("name");
+			console.log("Cookie Name:"+cookieName);
+			if ($("[name="+cookieName+"]").is(':checked')) {
+				document.cookie = cookieName+"=1;expires="+expires+";path=/";
+
+				gtag('consent', 'update', {
+					'ad_storage': 'granted',
+					'analytics_storage': 'granted'
+				});
+
+				fbq('consent', 'grant');
+			}else{
+				document.cookie = cookieName+"=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+
+				gtag('consent', 'update', {
+					'ad_storage': 'denied',
+					'analytics_storage': 'denied'
+				});
+
+				fbq('consent', 'revoke');
+			}
+		});
+	}
+	function mostraTexto(id){
+		var element = $("#"+id);
+		if (element.hasClass("collapse-show")) {
+			element.removeClass("collapse-show");
+		}else{
+			element.addClass("collapse-show");
+		}
+	}</script><style type="text/css">#cookiesmodal{
+			background-color: #010101F1 !important;
+			padding: 7px 0 !important;
+		}
+		div#cookiesmodal.avisoCookies {
+			padding: 7px 20px !important;
+		}
+		body #conteudo #cookiesmodal p, body #conteudo #cookiesmodal p b {
+			color: #FFF !important;
+			font-family: , sans-serif !important;
+			font-weight: 0 !important;
+		}
+		body #conteudo #cookiesmodal p a b, body #conteudo #cookiesmodal a b{
+			color:  #CA9547 !important;
+			font-family: , sans-serif !important;
+			font-weight: 0 !important;
+		}
+		#cookiesmodal p a b:hover, #cookiesmodal a b:hover {
+			color:  #000 !important;
+		}
+		#cookiesmodal button, .btn-aceitar-cookies::before {
+		    font-family: , sans-serif !important;
+		    font-weight: 0 !important;
+		    color: #000 !important;
+		    font-size: 16px !important;
+		    
+		    background-color: #CA9547 !important;
+		    width: 70% !important;
+		    border-radius: 0px !important;
+		}
+		#cookiesmodal button:hover, .btn-aceitar-cookies:hover::after {
+			background-color: #c48e48 !important;
+			color: #000 !important;
+			border-radius: 0px !important;
+		}
+		#cookiesmodal .wrapper-links-modais a.abre-modal {
+			color: #FFF !important;
+		}
+		#cookiesmodal .wrapper-links-modais a b {
+			color: #CA9547 !important;
+		} 
+
+		/*Modal Política*/
+		div#modal-cookies .modal-content {
+			background-color: #FFF !important;
+		}
+		div#modal-cookies .closeCookiesModalEntendi {
+			font-family: , sans-serif !important;
+		    font-weight: 0 !important;
+		    font-size: 16px !important;
+		    width: 70% !important;
+		    border-radius: 0px !important;
+		}
+		div#modal-cookies .closeCookiesModalEntendi, div#modal-cookies #closeModalCookies, #modal-cookies .modal-header button#closeModalCookies span {
+			background-color: #CA9547 !important;
+			color: #000 !important;
+		}
+		div#modal-cookies h5, div#modal-cookies h6 {
+			font-family: , sans-serif !important;
+		    font-weight: 0 !important;
+		    color: #CA9547 !important;
+		    font-size: 18px !important;
+			}
+			div#modal-cookies .description-modal {
+				font-family: , sans-serif !important;
+		    font-weight: 0 !important;
+		    color: #000 !important;
+		    font-size: 12px !important;
+			}
+			div#modal-cookies .description-modal a {
+				color: #CA9547 !important;
+			}
+			div#modal-cookies .description-modal a:hover {
+				color:  #000 !important;
+			}
+			@media (max-width:800px) {
+				div#modal-cookies h5, div#modal-cookies h6 {
+					font-size: calc(18px - 30%) !important;
+			}
+		}</style><style type="text/css">.cookiesmodal b{
+		color: #282828;
+	}
+	.cookiesmodal button{
+		background: #282828;
+	} 
+	.fecharIframe{
+		background-color: #282828 !important;
+	}
+
+	/* div#modalMinimizado.inactive {
+				display: none;
+		}
+		div#modalMinimizado.active {
+				display: block;
+		}
+
+		.modal-optionBar {
+					bottom: 0 !important;
+					left: 0 !important;
+					margin: 20px 20px !important;
+					padding: 0;
+					position: fixed!important;
+					text-align: left!important;
+					content: ""!important;
+					clear: both!important;
+					display: table!important;
+					z-index: 9999999998!important;
+					line-height: 1px!important;
+			}
+
+			.modal-optionBar span {
+					background: #CA9547 !important;
+					text-decoration: none!important;
+					display: flex!important;
+					align-items: center!important;
+					font-size: 12px!important;
+					-webkit-border-radius: 5px !important;
+					cursor: pointer!important;
+					box-shadow: 4px 2px 3px 0 rgba(0,0,0,.2)!important;
+			}
+
+			.modal-privacyOptionBox {
+					color: #000 !important;
+					font-size: 14px !important;
+					font-weight: 600 !important;
+					padding: 10px !important;
+					cursor: pointer!important;
+					background: 0 0!important;
+			}
+
+			i#icon-cookie {
+					font-size: 21px !important;
+					font-weight: 900 !important;
+			} */</style><link rel="stylesheet" href="https://montagem.sigastr.com.br/css/modal-politicaPrivacidade.css?nc=21"><div class="modal fade modalCookies" id="modal-cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"></div></div></div><link rel="stylesheet" href="https://montagem.sigastr.com.br/css/cookiesmodal1.css?nc=34"><div class="avisoCookiesFixo cookiesmodal cookiesBottom" id="cookiesmodal"><div class="container"><div class="row"><div class="pull-left txtCookies ml-5"><p>Usamos cookies para personalizar e melhorar a sua experiência. Ao navegar neste site, você concorda com a nossa
+															Política de Privacidade.
+							 </p></div><div class="col-md-2 pull-right cookieTxtBtn"><button onclick="setCookieModal()"> 
+						Entendi</button></div></div></div></div><!-- <div id="modalMinimizado" class="inactive"><div class="modal-optionBar"><div class="modal-optionBarInner"><span class="modal-shortcutLink modal-open-text" data-toggle="modal" data-target="#modal-cookies"><div class="modal-privacyOptionBox"><i class="fas fa-eye-slash mr-2" id="icon-cookie"></i>LGPD</div></span></div></div></div> --><script></script></div> <!-- fecha DIV conteúdo --> <div id="footer" class="sticky-footer"><div class="fundoIndices default-footer"><div class="container containerFullHD"><div class="indices"><div class="col-md-3 col-cub col-sm-4"><div class="boxIndices pull-left"><br><b>CUB</b></div><div class="pull-left">Abril / 2026 <br>Indice (R$/m²): 3.037,72  <br>Variação do Mês: 0,31%</div></div><div class="col-md-3 col-igpm col-sm-4"><div class="boxIndices pull-left"  style="margin-left:5%" ><br><b>IGPM</b></div><div  class="pull-left">Abril / 2026 <br>Variação do Mês: 0,52% <br>12 meses: -1,83%</div></div><div class="col-md-3 col-incc col-sm-4"><div class="pull-right">Abril / 2026 <br>Variação do Mês: 0,36% <br>12 meses: 5,81</div><div class="boxIndices pull-right"><br><b>INCC</b></div></div><div class="col-md-3"><div  class="casalRodape"> </div></div></div></div></div><div class="clearfix"></div><div class="fundoRodape"><div class="container containerFullHD"><div class="row"><div class="col-md-3 col-sm-3" style="font-size:12px;"><img class="footer-logo" src="https://d78txhfo8gp8r.cloudfront.net/calebe/arquivos/logo.png" alt="Itapema"  style="max-width: 60%" ><div class="footer-creci">Creci: 6131J</div></div><div class="col-md-3 col-sm-3"><div class="pull-left" style="margin-left:5%"><br><i class="fa fa-map-marker"></i>&nbsp;
+					Rua 246, 596  - Salas 01 e 03 Esquina com a terceira avenida  <br>Meia Praia, Itapema - SC <br />CEP: 88220-000<br></div></div><div class="col-md-3 rodapeEmail col-sm-3"><br><div class="pull-right"><i class="fa fa-phone"></i>&nbsp;(47) 3361-8100<br><i class="fa fa-whatsapp"></i> (47) 9 9908-5771<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="04766d676576606b446765686166616d696b72616d776d7065746169652a676b692a6676">[email&#160;protected]</a></div></div><div class="col-md-3 col-sm-3"><div class="fb-page" data-href="https://www.facebook.com/calebeimoveis/" data-tabs="false" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/calebeimoveis" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/calebeimoveis"></a></blockquote></div></div></div></div><!-- Copyright --><div class="row"><div class="col-md-12"><div class="copyrights">© 2026 www.calebeimoveisitapema.com.br - Todos os direitos reservados.
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Sistema Imobiliário: &nbsp;<a href="https://www.sigasoft.com.br?imob=calebe" target="_blank"><img src="https://code.sigasoft.com.br/logomarcas/sistema1b.png" alt="SIGASOFT"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Site Imobiliário: &nbsp;<a href="https://www.vipwebsul.com.br?imob=calebe" target="_blank"><img src="https://code.sigasoft.com.br/logomarcas/desenvolvimento1a.png" alt="VIPWEB"></a></span></div></div></div></div></div></div><div id="fb-root"></div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=1420411364716057";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><!-- Back To Top Button --><div id="backtotop"><a href="#"></a></div><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/jquery-3.3.1.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/chosen.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/magnific-popup.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/owl.carousel.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/rangeSlider.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/sticky-kit.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/slick.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/masonry.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/jquery.jpanelmenu.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/tooltips.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/custom.min.js?nc=2"></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-modelo/scripts/lazy.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/bootstrap/js/latest.min.js"></script><script type="text/javascript" src="https://code.sigasoft.com.br/jquery_masked_input/jquery.maskedinput.js"></script><link rel="stylesheet" href="https://montagem.sigastr.com.br/css/style-color-cliente.php?cor1=282828&cor2=C59B5F&www=https://d78txhfo8gp8r.cloudfront.net/calebe&cdn=https://d78txhfo8gp8r.cloudfront.net/calebe&bsimob=calebe&nc=10"><!--Add Google Translate <script type="text/javascript" src="https://code.sigasoft.com.br/googleTranslate/translateGoogle.js"></script>--><!--Calendario de Temporada--><!-- Add fancyBox --><link rel="stylesheet" href="https://code.sigasoft.com.br/jquery.fancybox/v2/source/jquery.fancybox.min.css" type="text/css" media="screen" /><script type="text/javascript" src="https://code.sigasoft.com.br/jquery.fancybox/v2/source/jquery.fancybox.min.js"></script> <!--Fim Calendário Temporada--><!-- Print This --><script type="text/javascript" src="https://code.sigasoft.com.br/printThis/printThis.min.js"></script><!-- Fim Print This --><!-- Light --> <link type="text/css" rel="stylesheet" href="https://code.sigasoft.com.br/lightGallery-master/dist/css/lightgallery.css" /><link type="text/css" href="https://code.sigasoft.com.br/lightGallery-master/dist/css/lg-transitions.min.css" rel="stylesheet"><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lightgallery.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-thumbnail.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-fullscreen.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-video.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-autoplay.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-zoom.min.js"></script><script src="https://code.sigasoft.com.br/lightGallery-master/lg/js/lg-pager.min.js"></script><!--<script src="https://code.sigasoft.com.br/lightGallery-master/lg/lib/jquery.mousewheel.min.js"></script>--><link rel="stylesheet" href="https://code.sigasoft.com.br/masterslider/style/masterslider.min.css" /><link href="https://code.sigasoft.com.br/masterslider/skins/black-2/style.min.css" rel='stylesheet' type='text/css'><link href="https://code.sigasoft.com.br/masterslider/skins/light-3/style.min.css" rel='stylesheet' type='text/css'><link href="https://code.sigasoft.com.br/masterslider/vertical/ms-vertical.min.css" rel='stylesheet' type='text/css'><script src="https://code.sigasoft.com.br/masterslider/jquery.easing.min.js"></script><script src="https://code.sigasoft.com.br/masterslider/masterslider-novo.min.js"></script><script src="https://code.sigasoft.com.br/notify/notify.js"></script><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" property="stylesheet" type="text/css" media="all" /><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/siga-revo/revolution/css/settings.css"><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/siga-revo/revolution/css/layers.css"><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/siga-revo/revolution/css/navigation.min.css"><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/siga-revo/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/siga-revo/revolution/fonts/font-awesome/css/font-awesome.min.css"><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/jquery.themepunch.tools.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/jquery.themepunch.revolution.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.video.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.actions.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.carousel.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.kenburn.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.layeranimation.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.migration.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.navigation.min.js" ></script><script type="text/javascript" src="https://code.sigasoft.com.br/siga-revo/revolution/js/extensions/revolution.extension.parallax.min.js" ></script><link rel="stylesheet" href="https://code.sigasoft.com.br/slider-barra/nouislider.min.css"><script type="text/javascript" src="https://code.sigasoft.com.br/slider-barra/nouislider.min.js"></script><link rel="stylesheet" type="text/css" href="https://code.sigasoft.com.br/jquery_tooltip_iamceege/css/tooltipster.min.css" /><script src="https://code.sigasoft.com.br/jquery_tooltip_iamceege/js/jquery.tooltipster.min.js" type="text/javascript"></script><script src="https://code.sigasoft.com.br/sweetalert2/dist/sweetalert2.min.js"></script><link rel="stylesheet" href="https://code.sigasoft.com.br/sweetalert2/dist/sweetalert2.min.css"> <script type="text/javascript" src="https://code.sigasoft.com.br/jquery/jquery.field.js"></script><link rel="stylesheet" href="https://code.sigasoft.com.br/aos-master/dist/aos.css" /><script src="https://code.sigasoft.com.br/aos-master/dist/aos.js"></script> <script type="text/javascript" src="https://code.sigasoft.com.br/priceFormat/jquery.price_format.2.0.min.js"></script>                <!-- Facebook Pixel Code Sistema-->        <script>            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            
+            
+            fbq('init', '327533611821933');
+            fbq('track', 'PageView');
+
+            
+                        
+            
+            
+                    </script>        <noscript>            <img height="1" width="1" src="https://www.facebook.com/tr?id=327533611821933&ev=PageView&noscript=1"/>        </noscript>        <!-- End Facebook Pixel Code Sistema-->    <!-- POPUP SAIDA SITE --><!-- action share btn on mobile --><script type="text/javascript">    $(document).ready(function() {
+        $("[data-show-id]").click(function(){
+            var _this = $(this);
+            var class_hidden = "hidden-options";
+            var data_show_id = _this.attr("data-show-id");
+            var data_add_class = _this.attr("data-add-class");
+            var data_add_class_on = _this.attr("data-add-class-on");
+            $(data_show_id).toggleClass(class_hidden);
+            $(data_add_class_on).toggleClass(data_add_class);
+        });
+    });</script><script type="text/javascript">(function($){
+
+
+
+
+	
+
+	$("#navigation ul .li-submenu").mouseover(function(){
+		addOverlay();
+	});
+	$("#navigation ul .li-submenu").mouseenter(function(){
+		addOverlay();
+	});
+	$("#navigation ul,#navigation ul .li-submenu").mouseleave(function(){
+		if($('ul.submenu-siga').css('opacity') == 1) {
+			addOverlay();
+		}else{
+			removeOverlay();
+			removeActiveClass($(this));
+		}
+	});
+
+
+
+	$(".icone-buscar").click(function(){
+		$(".buscaRedes").toggleClass("buscar-show");
+	});
+
+	$('body.site-mastergp #bg-banner-mastergp').click(function(event) {
+		var location = $("#link-projects").attr("href");
+		window.location.replace(location);
+	});
+
+	$('.information-item').click(function(event) {
+		var button = $(this);
+		var information = button.data('info');
+		var link = button.data('link');
+		var title = button.data('title');
+		$(".modal-data-title").text(title);
+		$(".modal-text-info").text(information);
+		$(".link-info").attr("href", link);
+	});
+
+	$('[role=dialog]').on('show.bs.modal', function(e) {
+		$(this).find('[role=document]').removeClass().addClass('modal-dialog ' + $(e.relatedTarget).data('ui-class'));
+	});
+
+
+	jQuery('#siga-galeria-rev').show().revolution({
+
+		sliderType:"carousel",
+ 		sliderLayout:"fullwidth",
+
+ 		stopLoop: "on",
+	    stopAfterLoops: 0,
+	    stopAtSlide: 1,
+
+        navigation: {
+            arrows: {
+                enable: true,
+                style: 'metis',
+                hide_onleave: false
+            },
+			thumbnails: {
+				style:"gyges",
+				enable:true,
+				width:60,
+				height:50,
+				min_width:80,
+				wrapper_padding:8,
+				wrapper_color:"#000000",
+				wrapper_opacity:"0.6",
+				visibleAmount:10,
+				hide_onmobile:false,
+				hide_onleave:false,
+				direction:"horizontal",
+				span:true,
+				space:10,
+				h_align:"center",
+				v_align:"bottom",
+				h_offset:0,
+				v_offset:0
+			}
+
+        },
+		carousel: {
+			horizontal_align: "center",
+			vertical_align: "center",
+			fadeout: "off",
+			maxVisibleItems: 3,
+			infinity: "on",
+			space: 0,
+			stretch: "off",
+				showLayersAllTime: "off",
+				easing: "Power3.easeInOut",
+				speed: "800"
+		},
+		responsiveLevels:[1380,1240,1024,778,480],
+		visibilityLevels:[1380,1240,1024,778,480],
+		gridwidth:[750,650,600,480,480],
+		gridheight:[650,550,500,480,360],
+		lazyType:"none"
+    });
+
+jQuery('#siga-galeria-rev2').show().revolution({
+
+		sliderType:"carousel",
+ 		sliderLayout:"auto",
+
+        navigation: {
+            arrows: {
+                enable: true,
+                style: 'metis',
+                hide_onleave: false
+            },
+			tabs: {
+				style:"ares",
+				enable:true,
+				width:300,
+				height:80,
+				min_width:350,
+				wrapper_padding:0,
+				wrapper_color:"#f5f5f5",
+				wrapper_opacity:"1",
+				tmp:'<div class="tp-tab-content">  <span class="tp-tab-date">{{param1}}</span>  <span class="tp-tab-title">{{param2}}</span></div><div class="tp-tab-image"></div>',
+				visibleAmount: 10,
+				hide_onmobile: true,
+				hide_under:776,
+				hide_onleave:false,
+				hide_delay:200,
+				direction:"vertical",
+				span:true,
+				position:"outer-right",
+				space:0,
+				h_align:"right",
+				v_align:"top",
+				h_offset:0,
+				v_offset:0
+			}
+
+        },
+        carousel: {
+			padding_top: "50",
+			padding_bottom: "50",
+			maxRotation: 35,
+			vary_rotation: "on",
+			minScale: 25,
+			vary_scale: "on",
+			horizontal_align: "center",
+			vertical_align: "center",
+			fadeout: "on",
+			vary_fade: "on",
+			maxVisibleItems: 7,
+			infinity: "on",
+			space: 10,
+			stretch: "off"
+		},
+		responsiveLevels:[1380,1240,1024,778,480],
+		visibilityLevels:[1380,1240,1024,778,480],
+		gridwidth:[750,650,600,480,480],
+		gridheight:[550,450,500,480,360]
+    });
+
+
+
+	/* Mini fotos vertical 2*/
+	var slider2 = new MasterSlider();
+	slider2.setup('siga-galeria-ms2' , {
+		width:1150,
+		height:650,
+		loop:true,
+		layout:'fullwidth',
+		view:"mask",
+		fillMode:"fit"
+	});
+	slider2.control('arrows',{autohide : false});
+	slider2.control('scrollbar' , {dir:'v',alinhar:'right'});
+	slider2.control('thumblist', {autohide : false,  dir : 'v',align:'right', width:180, height:100, margin:10, space:4});
+
+	/* Mini fotos vertical 3*/
+	var slider3 = new MasterSlider();
+	slider3.setup('siga-galeria-ms0' , {
+		width:1150,
+		height:650,
+		loop:true,
+		layout:'partialview',
+		fillMode:"fit"
+	});
+	slider3.control('arrows',{autohide : false});
+	slider3.control('scrollbar' , {dir:'v'});
+	slider3.control('thumblist', {autohide : false,  dir : 'v',align:'right', width:180, height:100, margin:10, space:4});
+
+	/* Mini fotos horizontal */
+	var slider3 = new MasterSlider();
+	slider3.setup('siga-galeria-ms-lateral-2' , {
+		width:900,
+		height:545,
+		loop:true,
+		layout:'fillwidth',
+		fillMode:"fit"
+	});
+	slider3.control('arrows',{autohide : false});
+	slider2.control('scrollbar' , {dir:'v',alinhar:'right'});
+	slider3.control('thumblist', {autohide : false,  dir : 'v', align:'right', arrows:true, width:100, height:75, margin:4, space:2});
+
+
+
+
+
+
+	/* Especial Mobile */
+	var windowWidth = $(window).width();
+	if(windowWidth<900){
+		$(".li-submenu ul").removeClass('submenu-siga');
+		$(".li-submenu ul div").removeClass('submenu-siga-cor');
+		$(".li-submenu").click(function(){
+			$(this).toggleClass("open-subnav");
+			removeOverlay();
+		});
+	}
+
+	
+
+	$("#scrollToContactForm").click(
+		function(event) {
+			event.preventDefault();
+			var contact_with_clone = $('#modal-with-clone');
+			console.log("contact_with_clone = " + contact_with_clone.length);
+			if (contact_with_clone) {
+				var contact_cloned = $('#put-cloned');
+				var contact_form = $('#contact-form-pg-imovel').clone();
+				contact_form.removeClass("agent-widget");
+				contact_form.addClass("agent-widget-cloned");
+				contact_form.css("top","0");
+				contact_cloned.html(contact_form);
+				contact_with_clone.modal("show");
+			}
+		}
+	);
+	$("#btn-filter-edit").click(
+		function(event) {
+			event.preventDefault();
+			var filter_mobile = $('#filter-mobile');
+			var modal_with_clone = $("#modal-with-clone");
+			if (filter_mobile) {
+				modal_with_clone.modal("show");
+			}
+		}
+	);
+
+
+
+
+	$('.show_number').click(function() {
+		show_number_complete( $(this) );
+
+		var see_more = $(".ver-mais");
+		see_more.hide();
+	});
+
+
+	$('#ver-telefones-cabecalho1').click(function() {
+		// var nro = $("num-hidden");
+		// var link_to_call = $(".phone-header .link-to-call .hidden-number .fone-final");
+		// link_to_call.removeClass(nro);
+		$('#fone-final').css("visibility","visible");
+		$('#fone-final').css("opacity","initial");
+        $(this).hide();
+
+	});
+
+	$(".ver-mais").click(function(){
+		var this_elem = $(this);
+		var class_to_click = this_elem.attr("data-show-number-class");
+		class_to_click = $(class_to_click);
+
+		show_number_complete( class_to_click );
+		// class_to_click.click();
+        this_elem.hide();
+    });
+
+	 $("#ver-telefones").click(function(){
+	 	var num_hidden_class_name = "num-hidden";
+		var num_hidden = $("."+num_hidden_class_name);
+		var link_to_call = $(".phones-footer .link-to-call");
+		link_to_call.removeClass(num_hidden_class_name);
+        $(this).hide();
+    });
+	 $("#ver-telefones-cabecalho").click(function(){
+	 	var num_hidden_class_name = "num-hidden";
+		var num_hidden = $("."+num_hidden_class_name);
+		var link_to_call = $(".phone-header .link-to-call");
+		link_to_call.removeClass(num_hidden_class_name);
+        $(this).hide();
+    });
+	 $("#ver-telefones-contato").click(function(){
+	 	var before_class_name = "phones-contact-page";
+	 	var num_hidden_class_name = "num-hidden";
+		var num_hidden = $("."+num_hidden_class_name);
+		var link_to_call = $(".col-infos-contato-pg .link-to-call");
+		link_to_call.removeClass(num_hidden_class_name);
+        $(this).hide();
+    });
+
+	 $("#buscador-acao").click(function(){
+	 	$("header").toggleClass("buscador-navbar-on");
+	 });
+
+	 $("#haburguer-action , #menu-curtain").click(function(){
+	 	$("body").toggleClass("hamburguer-on");
+	 });
+
+	 trocaIndicador();
+
+	/* Top Inicial Overlay SubMenu*/
+	//var topSubmenu = $("div#header").height(); /* recebe Top Overlay SubMenu Flutuante */
+	//$(".overlaySubmenuAtivo").css("top",topSubmenu); /* Altera o Top do Overlay SubMenu */
+
+	var headerOffset = $("#header-container").height();
+	if(headerOffset<200){headerOffset=200;}
+	$(window).scroll(function(){
+		if($(window).scrollTop() >= headerOffset){
+			$("#wrapper").addClass('flutuante-add');
+
+			//var topSubmenu = 0; /* recebe Top Overlay SubMenu Flutuante */
+			//$(".overlaySubmenuAtivo").css("top",topSubmenu); /* Altera o Top do Overlay SubMenu */
+
+		} else {
+			$("#wrapper").removeClass('flutuante-add');
+
+			//var topSubmenu = $("div#header").height(); /* recebe Top Overlay SubMenu */
+			//$(".overlaySubmenuAtivo").css("top",topSubmenu); /* Altera o Top do Overlay SubMenu */
+		}
+
+
+	});
+
+	$('#modal-assinatura').on('hidden.bs.modal', function () {
+		console.log("modal-assinatura close");
+		var videoPlayer =  $("#video-assinatura");
+		var videoPlayer_src = videoPlayer.attr("src");
+		videoPlayer.attr("src",videoPlayer_src);
+
+	});
+
+	$('#modal-campanha').on('hidden.bs.modal', function () {
+		console.log("modal-campanha close");
+
+		var videoPlayer =  $("#video-120-dias");
+		var videoPlayer_src = videoPlayer.attr("src");
+		videoPlayer.attr("src",videoPlayer_src);
+
+		var videoPlayer2 =  $("#video-descomplica");
+		var videoPlayer2_src = videoPlayer2.attr("src");
+		videoPlayer2.attr("src",videoPlayer2_src);
+
+		var videoPlayer3 =  $("#video-cheque-mao");
+		var videoPlayer3_src = videoPlayer3.attr("src");
+		videoPlayer3.attr("src",videoPlayer3_src);
+	});
+
+
+}) (this.jQuery);
+
+$(document).ready(function(){
+	$("#card-0 .card-link ").click();
+});
+
+function show_number_complete(this_elem){
+	this_elem.each(function( index ) {
+		// console.log( index + ": " + $( this ).text() );
+		$( this ).find('span').text( $( this ).data('last') );
+	});
+}
+
+function trocaIndicador() {
+	$("#incc").delay(3000).fadeOut(500);
+	$("#ccc").delay(3500).fadeIn(500).delay(3000).fadeOut(500);
+	$("#igpm").delay(7500).fadeIn(500).delay(3000).fadeOut(500);
+	$("#incc").delay(8000).fadeIn(500, function () {
+		trocaIndicador();
+	});
+}
+
+
+
+	$(document).ready(function(){
+		var li_submenu = $("#navigation ul .li-submenu");
+		var body = $("body");
+		var overlay_acive_body = "overlayAciveBody";
+		var navigation_ul = "#navigation ul";
+		var navigation_ul_li_submenu = "#navigation ul .li-submenu";
+		var btn_search_by_code = $(".btn_search_by_code");
+		var search_by = $("#search-by");
+		li_submenu.mouseenter(function() {
+			body.addClass(overlay_acive_body);
+		});
+		$(navigation_ul+","+navigation_ul_li_submenu).mouseleave(function() {
+			body.removeClass(overlay_acive_body);
+		});
+
+		btn_search_by_code.click(function(){
+			console.log("btn_search_by_code clicked");
+			var form_search_by_code = $(".form_search_by_code_intern");
+			var form_buscar= $(".form-buscar");
+			var home_buscar= $(".home-buscar");
+			var by_features = "POR CARACTERÍSTICAS";
+			var by_code = (search_by.length>0) ? "POR "+search_by.text() : "POR CÓDIGO";
+
+			if (form_search_by_code.hasClass("inactive")) {
+				form_search_by_code.removeClass("inactive");
+				form_buscar.show();
+				home_buscar.hide();
+				btn_search_by_code.text(by_features);
+			}else{
+				form_search_by_code.addClass("inactive");
+				home_buscar.show();
+				btn_search_by_code.text(by_code);
+			}
+		});
+
+
+	});
+
+		
+
+function init_load_gif(){
+	var loader_gif = $("#load-gif");
+	if (loader_gif.length > 0) {
+		loader_gif.fadeIn();
+		setTimeout(function(){
+			loader_gif.fadeOut();
+		}, 300);
+	}
+}
+function addOverlay(){
+	$('body').addClass('overlaySigaAtivoBody');
+	$('#overlaySiga').addClass('overlaySigaAtivo');
+	//$('#conteudo').addClass('blur');
+}
+function removeOverlay(){
+	$('body').removeClass('overlaySigaAtivoBody');
+	$('#overlaySiga').removeClass('overlaySigaAtivo');
+	$('#conteudo').removeClass('blur');
+}
+
+function masterGaleria(aba){
+    var slider = new MasterSlider();
+    slider.setup('siga-galeria-ms3', {
+        width:1150,
+        height:650,
+        loop:false,
+        layersMode:'full',
+        layout:'fillwidth',
+        fillMode:"fit"
+    });
+    slider.control('arrows',{autohide : false});
+    slider.control('scrollbar' , {dir:'v'});
+    slider.control('thumblist', {autohide : false, arrows:true,  dir : 'v',align:'right', width:180, height:100, margin:10, space:4});
+
+    /* Mudar Abas */
+    slider.api.addEventListener(MSSliderEvent.CHANGE_START , function(){
+    	var slideAtual = slider.api.index()+1;
+    	var slideUltimo = slider.api.count();
+		var umClique = false;
+    	if(slideAtual==slideUltimo){
+			$(".ms-nav-next").click(function(){
+				if(umClique==false){
+					loadgaleria(aba);
+					umClique = true;
+				}
+			});
+    	}
+    });
+
+    }
+
+function masterGaleria1(aba){
+	$('#siga-galeria-ms1').fadeOut();
+    var slider = new MasterSlider();
+    	slider.setup('siga-galeria-ms1' , {
+		width:770,
+        height:450,
+        loop:false,
+        layout:'partialview',
+        layersMode:'full',
+        fillMode:"fit"
+	});
+	slider.control('arrows', {autohide : false});
+	slider.control('scrollbar' , {dir:'v'});
+	slider.control('thumblist', {autohide : false,  dir : 'h',align:'bottom', width:100, height:70, margin:5, space:5});
+
+    /* Mudar Abas */
+    slider.api.addEventListener(MSSliderEvent.CHANGE_START , function(){
+    	var slideAtual = slider.api.index()+1;
+    	var slideUltimo = slider.api.count();
+		var umClique = false;
+    	if(slideAtual==slideUltimo){
+			$(".ms-nav-next").click(function(){
+				if(umClique==false){
+					loadgaleria(aba);
+					umClique = true;
+				}
+			});
+    	}
+    });
+    $('#siga-galeria-ms1').fadeIn();
+
+}
+
+function purecssGaleria(aba){
+
+}
+
+function sliderproGaleria(aba){
+
+	$('#sliderPro').sliderPro({
+			width: 700,
+			height: 700,
+			arrows: true,
+			fadeArrows: false,
+			loop: true,
+			autoplay: false,
+			buttons: false,
+			slideDistance:0,
+			//touchSwipe:true,
+			//touchSwipeThreshold:200,
+			slideAnimationDuration:300,
+			fullScreen: false,
+			visibleSize: '100%',
+			forceSize: 'fullWidth',
+			autoSlideSize: true
+	});
+
+}
+
+$("#btn-pure-galeria").click(function(){$('.item.active').trigger('click');});
+
+function slickGaleria(aba){
+	$('.siga-galeria-sl').slick({
+		  lazyLoad: 'ondemand',
+		  infinite: true,
+		  speed: 400,
+		  slidesToShow: 1,
+		  arrows: true,
+		  autoplay: false,
+		  //autoplaySpeed: 5000,
+		  centerMode: true,
+		  variableWidth: true,
+		  touchMove: false,
+		  draggable:false
+  	});
+
+	/*
+  	$('.siga-galeria-mini').slick({
+  		  lazyLoad: 'ondemand',
+		  infinite: true,
+		  speed: 400,
+		  slidesToShow: 5,
+		  arrows: false,
+		  autoplay: false,
+		  centerMode: true,
+		  variableWidth: true,
+  		  focusOnSelect: true,
+  		  asNavFor: '.siga-galeria-sl'
+  	});
+  	*/
+
+  	window.onload = function(){init_load_gif();}
+  	//init_load_gif();
+}
+
+function slickDestaques(){
+	$('.slick-destaques').slick({
+		  lazyLoad: 'ondemand',
+		  infinite: true,
+		  speed: 400,
+		  slidesToShow: 1,
+		  arrows: true,
+		  autoplay: true,
+		  autoplaySpeed: 5000,
+		  centerMode: true,
+		  variableWidth: true
+  	});
+}
+
+function displayFotos(){
+	$(".btnMidia a, .pgBtn").removeClass("bmActive");
+	$("#btnMidiaFotos").addClass("bmActive");
+	$("#gmap-galeria,#video-galeria,#tour360-galeria,#bairroVideo,#imovelVideo").fadeOut(50);
+	$("#pg_galeria").delay(40).fadeIn(100);
+	}
+
+function displayMapa(){
+	$(".btnMidia a, .pgBtn").removeClass("bmActive");
+	$("#btnMidiaMapa").addClass("bmActive");
+	$("#pg_galeria,#video-galeria,#tour360-galeria,#bairroVideo,#imovelVideo").fadeOut(50);
+	$("#gmap-galeria").delay(40).fadeIn(100);
+	}
+
+function displayBairro(){
+	$(".btnMidia a, .pgBtn").removeClass("bmActive");
+	$("#btnMidiaBairro").addClass("bmActive");
+	$("#pg_galeria,#gmap-galeria,#imovelVideo").fadeOut(50);
+	$("#bairroVideo").delay(40).fadeIn(100);
+}
+
+function displayImovelVideo(){
+	$(".btnMidia a, .pgBtn").removeClass("bmActive");
+	$("#btnImovelVideo").addClass("bmActive");
+	$("#pg_galeria,#gmap-galeria,#bairroVideo").fadeOut(50);
+	$("#imovelVideo").delay(10).fadeIn(100);
+}
+
+
+function displayVideo(){
+	$(".btnMidia a, .pgBtn").removeClass("bmActive");
+	$("#btnMidiaVideo").addClass("bmActive");
+	$("#pg_galeria,#gmap-galeria,#tour360-galeria,#bairroVideo").fadeOut(50);
+	$("#video-galeria").delay(10).fadeIn(100);
+	}
+
+function displayTour360(){
+	$(".btnMidia a").removeClass("bmActive");
+	$(".btnMidia a#btnMidiaTour").addClass("bmActive");
+	$("#pg_galeria,#gmap-galeria,#video-galeria").fadeOut(50);
+	$("#tour360-galeria").delay(10).fadeIn(100);
+	$("#tour360-legenda").delay(500).fadeIn(500);
+	$("#tour360-legenda").delay(2500).fadeOut(500);
+	}</script><script>$(document).ready(function(){
+	$(".has-scroll").click(function(e) {
+		e.preventDefault();
+		var scroll_to = $(this).attr("scroll-to");
+		var subtract = $(this).attr("scroll-subtract-value");
+		var speed = parseInt( $(this).attr("scroll-speed") );
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $(scroll_to).offset().top - parseInt(subtract)
+		}, speed);
+	});
+
+
+	
+	$(".myImageSize").each(function() {
+		var screenImage = $(this);
+		var theImage = new Image();
+		theImage.src = screenImage.attr("src");
+		var imageWidth = theImage.width;
+		var imageHeight = theImage.height;
+		var id_data = $(this).attr("data-id");
+		$(".class-img-"+id_data).css("min-width",imageWidth);
+	});
+
+
+	$("#scroll-to-pacotes").click(function(e) {
+		e.preventDefault();
+		var scroll_to = $(this).attr("scroll-to");
+		var id_scroll_to = $(scroll_to);
+		id_scroll_to.removeClass("section-show");
+
+		var half_height = $(window).height()/2;
+
+
+		var speed = parseInt( $(this).attr("scroll-speed") );
+
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $(scroll_to).offset().top - half_height
+		}, speed);
+
+		setTimeout(function(){ id_scroll_to.addClass("section-show") }, 1000);
+
+
+	});
+
+
+
+});
+
+
+function toggleActiveClass(element){
+	element.toggleClass("active");
+}
+function removeActiveClass(element){
+	element.removeClass("active");
+}
+
+/* INICIO Carregar Imagens depois de carregar a página com data-src */
+$(function() {
+    $('.lazy').lazy({
+    	delay: 50,
+        afterLoad: function(element) {
+            $('.lazy img').fadeOut(50);
+        }
+    });
+
+});
+
+/* FIM */
+
+
+/* teste para passar fotos na lista de imoveis
+$(function() {
+	$('.carousel-fotos').owlCarousel({
+		autoPlay: false,
+		navigation: true,
+		slideSpeed: 600,
+		items : 4,
+		itemsDesktop : [1239,4],
+		itemsTablet : [991,3],
+		itemsMobile : [767,1]
+	});
+});
+*/</script><script>function getCookie(name) {
+	  match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+	  if (match) return match[1];
+	}
+
+	function deleteCookie(name) {
+	  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	}
+
+	function createCookie(name, time){
+	  document.cookie = name+"=1; max-age="+time+"; path=/;";
+	}
+
+	function open_fancybox(class_name){
+		$("."+class_name).fancybox({
+			padding : 0,
+			background: '#E4D8BC',
+			helpers : {
+				overlay : {
+					closeClick: false
+				}
+			},
+			overlay	: {
+				css : {
+					'background' : 'rgba(255, 255, 255,0.85)'
+				}
+			}
+		});
+	}
+
+	$(function () {
+
+
+		$(".contato-form-pg").submit(function () {
+			$("#new-spinner").show();
+		});
+
+		
+		
+				
+
+
+				AOS.init({
+	        duration: 1500	    });
+
+		
+		
+		
+		
+
+
+		$(".btnTipoHomeBuscar").on("click", function(e){
+			e.preventDefault();
+			var add_class_name = "btnTipoAtivo";
+			$(".btnTipoHomeBuscar").removeClass("btnTipoAtivo");
+			$(this).addClass(add_class_name);
+		})
+
+
+		
+		$(".abreOpcoesCompartilhamento").on("click", function(){
+
+			if($(".controleWhatsappMobile.compartilharFixo .compartilharWhatsapp").hasClass("desativado")){
+				$(".controleWhatsappMobile.compartilharFixo .compartilharWhatsapp").removeClass("desativado");
+				$(".controleWhatsappMobile.compartilharFixo .compartilharWhatsapp").show(1000);
+
+				$(".controleWhatsappMobile.compartilharFixo .compartilharFacebook").removeClass("desativado");
+				$(".controleWhatsappMobile.compartilharFixo .compartilharFacebook").show(1000);
+			}else{
+				$(".controleWhatsappMobile.compartilharFixo .compartilharWhatsapp").addClass("desativado");
+				$(".controleWhatsappMobile.compartilharFixo .compartilharWhatsapp").hide(1000);
+
+				$(".controleWhatsappMobile.compartilharFixo .compartilharFacebook").addClass("desativado");
+				$(".controleWhatsappMobile.compartilharFixo .compartilharFacebook").hide(1000);
+			}
+		})
+
+
+
+		
+			var idControleWhatsapp = $(".flutuanteWhatsAutomate").attr("idControle");
+
+			if(idControleWhatsapp){
+				$(".flutuanteWhatsAutomate").on("click", function(){
+											//Atualiza o contador do sequencial
+						$.post("https://www.calebeimoveisitapema.com.br/atualizaContadorSequencial",{
+							ajax: true,
+		   					idControle: idControleWhatsapp,
+		   					idimob: 1						});
+									})
+			}
+
+			$(".contatoWhatsSemNome").on('click', function(){
+
+				var nomeCliente = 'Cliente não identificado';
+				if($(this).attr("linkImovel")){var linkImovel = $(this).attr("linkImovel")}else{var linkImovel = ''};
+				var via =  'Desktop';
+				var nomeCorretor = $(this).attr("nomecorretor");
+				var telefoneCorretor = $(this).attr("telefonecorretor");
+				var idImobiliaria = '1';
+
+				$.post("whatsapp",
+				{
+					ajax: true,
+    				linkImovel : linkImovel,
+    				via: via,
+    				nomeCliente: nomeCliente,
+    				idImobiliaria: idImobiliaria,
+    				nomeCorretor: nomeCorretor,
+    				telefoneCorretor: telefoneCorretor,
+    				tipoForm: 'whatsappNovo'
+
+				});
+
+
+			})
+
+			
+			/*Novo Controle de Whatsapp*/
+			$(".btnIniciarContatoWhats").on('click', function (){
+				var emailVazio = false;
+				
+				if($("#nomeClienteWhatsapp").val() == null || $("#nomeClienteWhatsapp").val() == "" || $("#foneClienteWhatsapp").val() == null || $("#foneClienteWhatsapp").val() == "" || emailVazio){
+
+					if (emailVazio) {
+						alert("Para iniciar o contato, informe o seu nome, telefone e e-mail.");
+					}else{
+						alert("Para iniciar o contato, informe o seu nome e telefone.");
+					}
+
+				}else{
+
+					var contatoWhats = $(this).attr("contatoWhats");
+					var ddi = $(this).attr("data-ddi") ? $(this).attr("data-ddi") : 55;
+					var emailCliente = $("#emailClienteWhatsapp").val() ? $("#emailClienteWhatsapp").val() : '';
+					//Salvar no banco de dados as informações
+						$.post("https://www.calebeimoveisitapema.com.br/whatsapp",
+						{
+							ajax: true,
+			    			linkImovel : $("#linkImovelWhatsapp").val(),
+			    			via: $("#viaWhatsapp").val(),
+			    			tipo_site: $("#tipo_site").val(),
+			    			nomeCliente: $("#nomeClienteWhatsapp").val(),
+			    			foneCliente: $("#foneClienteWhatsapp").val(),
+							emailCliente: emailCliente,
+			    			idImobiliaria: $("#idImobiliariaWhatsapp").val(),
+			    			nomeCorretor: $("#nomeCorretorWhatsapp").val(),
+			    			telefoneCorretor: $("#telefoneCorretorWhatsapp").val(),
+			    			tipoForm: $("#tipoForm").val()
+
+						},function(){
+							//Tratamento do Contato do Whatsapp
+							var url = 'https://api.whatsapp.com/send?l=pt_br&phone='+ddi+contatoWhats+'&text=Olá. Meu nome é '+$("#nomeClienteWhatsapp").val()+', estou em seu site e gostaria de mais informações';
+
+							if($("#linkImovelWhatsapp").val()){
+								url += " sobre esse imóvel: "+$("#linkImovelWhatsapp").val();
+							}
+
+							
+																	window.open(url, '_blank');
+								
+
+														}
+					);
+				}
+			});
+
+
+		
+		
+		// WHATS FLUTUANTE
+		
+			$("#flutuante_whats,#flutuante_chat").mouseenter(function() {
+				$(this).animate({width:'200px'},350);
+			});
+
+		
+					$("#flutuante_whats,#flutuante_chat").mouseleave(function() {
+			$(this).stop();
+			$(this).animate({width:'60px'},80);
+		});
+
+		
+		// NOVO TOOLTIP
+		$('.tooltip').tooltipster({
+			animation: 'grow',
+			delay: 150,
+			theme: 'tooltipster-default',
+			touchDevices: false,
+			contentAsHTML: true,
+			trigger: 'hover'
+		});
+
+		
+		
+						var tpj=jQuery;
+					var sigaRevo;
+					tpj(document).ready(function() {
+						if(tpj("#siga-slide-home").revolution == undefined){
+							revslider_showDoubleJqueryError("#siga-slide-home");
+						}else{
+							sigaRevo = tpj("#siga-slide-home").show().revolution({
+							 	responsiveLevels: [1920, 1024, 778, 550],
+
+								gridwidth:[1920, 1024, 778, ],
+								gridheight:[600, 768, 960, ],
+
+								/* options are 'auto', 'fullwidth' or 'fullscreen' */
+								sliderLayout: 'fullwidth',
+
+								delay: 9000,
+
+								/* basic navigation arrows and bullets */
+								navigation: {
+
+									onHoverStop:"off",
+
+									arrows: {
+										enable: true,
+										style: 'hesperiden',
+										hide_onleave: false,
+										hide_onmobile: true
+									},
+
+									bullets: {
+										enable: true,
+										style: 'hesperiden',
+										direction: 'horizontal',
+										rtl: false,
+
+										container: 'slider',
+										h_align: 'center',
+										v_align: 'bottom',
+										h_offset: 0,
+										v_offset: 20,
+										space: 5,
+
+										hide_onleave: false,
+										hide_onmobile: false
+									},
+									touch: {
+								        touchenabled: 'on',
+								        swipe_threshold: 75,
+								        swipe_min_touches: 1,
+								        swipe_direction: 'horizontal',
+								        drag_block_vertical: true
+								    }
+								}
+							});
+						}
+					});	/*ready*/
+
+
+		
+		
+		/*Bug de Cidades*/
+		var countCidadesBox = 0;
+		$("#boxCidade input").each(function (){
+			countCidadesBox++;
+		})
+
+		if(countCidadesBox == 0){
+			$("#btnCidade").addClass("bairrosDesativados");
+		}
+
+
+
+		/* Desabilitar/habilitar filtros na home e lista */
+		$("#homeTipo").change(function(){
+			var tipologia = $(this).val();
+			if (tipologia>=20 && tipologia<50) {
+				disableFiltros();
+			}else{
+				enableFiltros();
+			}
+		});
+
+		$(".refTipo").click(function(){
+			var tipologia = $(".refTipo:checked").val();
+			if (tipologia>=20 && tipologia<50) {
+				disableFiltros();
+			}else{
+				enableFiltros();
+			}
+		});
+
+		
+		function disableFiltros(){
+			$("#btnDormitorios").css({'pointer-events':'none','opacity':'.4'});
+			$("#btnPerfil").css({'pointer-events':'none','opacity':'.4'});
+			$("#btnSuites").css({'pointer-events':'none','opacity':'.4'});
+			$("#btnMobiliado").css({'pointer-events':'none','opacity':'.4'});
+		}
+		function enableFiltros(){
+			$("#btnDormitorios").css({'pointer-events':'all','opacity':'1'});
+			$("#btnPerfil").css({'pointer-events':'all','opacity':'1'});
+			$("#btnSuites").css({'pointer-events':'all','opacity':'1'});
+			$("#btnMobiliado").css({'pointer-events':'all','opacity':'1'});
+		}
+		/* FIM:Desabilitar/habilitar filtros na home e lista */
+
+
+
+		$("#buscaHome").click(function () {
+								if($("#homeOperacao").val() == '' || $("#homeOperacao").val() == null){
+						var homeOperacao = 'comprar-imoveis';
+					}else{
+						var homeOperacao = $("#homeOperacao").val();
+					}
+							var homePerfil = $(".homePerfil:checked").map(function(){return $(this).val()}).get();
+			var homeTipo = $("#homeTipo").val();
+									var homeDorm = $(".homeDorm:checked").map(function(){return $(this).val()}).get();
+			var homeCidade = $(".homeCidade:checked").map(function(){return $(this).val()}).get();
+			var homeBairro = $(".homeBairro:checked").map(function(){return $(this).val()}).get();
+
+			
+
+			
+			
+			
+			
+						$("#new-spinner").show();
+			// ''
+			window.location.href='https://www.calebeimoveisitapema.com.br/'+homeOperacao+'/?t='+homeTipo+'&d='+homeDorm+'&c='+homeCidade+'&ba='+homeBairro
+			+'&per='+homePerfil																		;
+		});
+
+		$( "#autocomplete" ).keypress(function( event ) {
+		  if ( event.which == 13 ) {
+		    var homePerfil = $(".homePerfil:checked").map(function(){return $(this).val()}).get();			var homeOperacao = $("#homeOperacao").val();
+			var homeTipo = $("#homeTipo").val();
+			var homeDorm = $(".homeDorm:checked").map(function(){return $(this).val()}).get();
+			var homeCidade = $(".homeCidade:checked").map(function(){return $(this).val()}).get();
+			var homeBairro = $(".homeBairro:checked").map(function(){return $(this).val()}).get();
+			$("#new-spinner").show();
+			window.location.href=''+homeOperacao+'/?t='+homeTipo+'&d='+homeDorm+'&c='+homeCidade+'&ba='+homeBairro
+			+'&per='+homePerfil;
+		  }
+		});
+
+
+		/*Filtrar (simples) do mobile*/
+
+		$("#filtrarImoveis").click(function () {
+
+
+			var filtrarMobileDormitorio = $(".filtrarMobileDormitorios:checked").map(function(){return $(this).val()}).get();
+			var filtrarMobileSuites = $(".refSuite:checked").map(function(){return $(this).val()}).get();
+			var filtrarMobileCidade = $(".filtrarMobileCidade:checked").map(function(){return $(this).val()}).get();
+			var filtrarMobileBairro = $(".filtrarMobileBairro:checked").map(function(){return $(this).val()}).get();
+			var filtrarMobilePerfil = $(".filtrarMobilePerfil:checked").map(function(){return $(this).val()}).get();
+			var filtrarOrdenar = $(".ordenarMobile:checked").val();
+			var filtrarMobileMobiliado = $(".mobiliaCheck:checked").val();
+			var filtrarMobileSemiMobiliado = $(".semiMobiliaCheck:checked").val();
+			var filtrarMobileSemMobilia = $(".semMobiliaCheck:checked").val();
+			var filtrarMobilePreferencia = $(".filtrarMobileDistancia:checked").map(function(){return $(this).val()}).get();
+			var valorInicial =  apenasNum($("#slider-valor-busca-min").text());
+			var valorFinal =  apenasNum($("#slider-valor-busca-max").text());
+			var dacao =  ( $("#op-dacao-mobile .dacao:checked").val() ) ? '&dacao='+$("#op-dacao-mobile .dacao:checked").val() : '';
+			var filtrarTipoImovel =  ( $("#refinarTipo-mobile").val() ) ? '&t='+$("#refinarTipo-mobile").val() : '';
+
+			if(filtrarMobileMobiliado == '' || filtrarMobileMobiliado == undefined){
+				filtrarMobileMobiliado = '0';
+			}
+
+			if(filtrarMobileSemiMobiliado == '' || filtrarMobileSemiMobiliado == undefined){
+				filtrarMobileSemiMobiliado = '0';
+			}
+
+			if (filtrarMobileSemMobilia) {
+				filtrarMobileMobiliado = '2';
+				filtrarMobileSemiMobiliado = '2';
+			}
+
+
+
+			var filtroHospedes = '';
+			
+			var ariaAtualLowerBarraValor = apenasNum($("#slider-barra-busca-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-lower").attr("aria-valuenow"));
+			var ariaAtualUpperBarraValor = apenasNum($("#slider-barra-busca-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-upper").attr("aria-valuenow"));
+
+			if(ariaAtualLowerBarraValor == 0 && ariaAtualUpperBarraValor == 1000){
+				valorInicial = "";
+				valorFinal = "";
+			}
+
+			$("#new-spinner").show();
+
+			window.location.href='?t=&c='+filtrarMobileCidade+'&per='+filtrarMobilePerfil+'&p='+filtrarMobilePreferencia+'&vi='+valorInicial+'&vf='+valorFinal+'&d='+filtrarMobileDormitorio+'&s='+filtrarMobileSuites+'&ba='+filtrarMobileBairro+'&or='+filtrarOrdenar+'&m='+filtrarMobileMobiliado+'&sm='+filtrarMobileSemiMobiliado+dacao+filtrarTipoImovel+filtroHospedes;
+		});
+
+
+			/****************************/
+
+			
+
+			if($("#lightgallery-depoimentos").length){
+
+				init_load_gif();
+
+				$("#lightgallery-depoimentos").lightGallery();
+
+				$('.siga-galeria-sl').slick({
+					lazyLoad: 'ondemand',
+					infinite: true,
+					speed: 400,
+					slidesToScroll: 1,
+					slidesToShow: 1,
+					arrows: true,
+					autoplay: true,
+					centerMode: true,
+					variableWidth: true,
+					touchMove: true,
+					draggable:true
+				});
+
+
+			}
+
+
+			
+
+
+		
+		
+
+	});
+
+	$(".refinarSelectBtn").click(function(){
+		var id_to_open = "#"+$(this).attr("data-open");
+		var class_to_open = "opened";
+		console.log("id_to_open = "+id_to_open);
+		$(id_to_open).addClass(class_to_open);
+		addOverlay(id_to_open);
+	});
+	function overlay_active(){
+		return "overlay_active";
+	}
+
+
+	function html_overlay(){
+		console.log("html_overlay function");
+		var html_overlay = "<div class='overlay' onclick='validaOverlay()' ";
+			html_overlay +="style='width: 100%; height: 100%; background-color: black; ";
+			html_overlay +="top: 0px; left: 0px; z-index: 999; position: fixed; opacity: 0.4'></div>";
+		return html_overlay;
+	}
+
+	function html_overlay_absolute(){
+		console.log("html_overlay_absolute function");
+		var html_overlay = "<div class='overlay' onclick='validaOverlay()' ";
+			html_overlay +="style='width: 100%; height: 100%; background-color: transparent; ";
+			html_overlay +="top: 0px; left: 0px; z-index: 9; position: absolute; opacity: 0'></div>";
+		return html_overlay;
+	}
+	function addOverlay(id){
+		//console.log("addOverlay clicked");
+
+		
+		$(id).css({'z-index':'9999'});
+
+		// if($("#grid-refinar-lateral").length){
+		// 	$("#grid-horizontal").prepend(html_overlay_absolute());
+		// 	$("#grid-horizontal").addClass("overlay-opacity");
+		// }
+	}
+
+
+	function salvarFiltros(aux){
+
+
+
+		var refDorm = aux == 1 ? $(".refDorm:checked").map(function(){return $(this).val()}).get() : $(".refDormMobile:checked").map(function(){return $(this).val()}).get();
+		var refPerfil = aux == 1 ? $(".refPerfil:checked").map(function(){return $(this).val()}).get() : $(".refPerfilMobile:checked").map(function(){return $(this).val()}).get();
+		var refTipo = aux == 1 ? $(".refTipo:checked").map(function(){return $(this).val()}).get() : $(".refTipoMobile:checked").map(function(){return $(this).val()}).get();
+		var refCidade = aux == 1 ? $(".refCidade:checked").map(function(){return $(this).val()}).get() : $(".refCidadeMobile:checked").map(function(){return $(this).val()}).get();
+		var refBairro = aux == 1 ? $(".refBairro:checked").map(function(){return $(this).val()}).get() : $(".refMobileBairro:checked").map(function(){return $(this).val()}).get();
+		var refPreferencia = aux == 1 ? $(".refPreferencia:checked").map(function(){return $(this).val()}).get() : $(".refPreferenciaMobile:checked").map(function(){return $(this).val()}).get();
+		var refSuite = aux == 1 ? $(".refSuite:checked").map(function(){return $(this).val()}).get() : $(".refSuiteMobile:checked").map(function(){return $(this).val()}).get();
+		var refGaragem = aux == 1 ? $(".refGaragem:checked").map(function(){return $(this).val()}).get() : $(".refGaragemMobile:checked").map(function(){return $(this).val()}).get();
+
+		var length_box_necessidades = $("#boxRefinarNecessidades").length;
+		if ( length_box_necessidades > 0 ) {
+			var refNecessidades = (aux == 1) ? $(".refNecessidade:checked").map(function(){return $(this).val()}).get() : "";
+			var e_comercial = (refNecessidades!="") ? "&" : "";
+			refNecessidades = refNecessidades.toString();
+			var refNecessidades_replace = (refNecessidades.indexOf(',') != -1) ? refNecessidades.replace(/,/g, '&') : refNecessidades;
+			refNecessidades = e_comercial+refNecessidades_replace;
+			var paramsNecessidades = refNecessidades;
+
+		}else{
+			var refMobiliado = aux == 1 ? $(".refMobiliado:checked").map(function(){return $(this).val()}).get() : $(".refMobiliadoMobile:checked").map(function(){return $(this).val()}).get();
+			var refSemiMobiliado = aux == 1 ? $(".refSemiMobilia:checked").map(function(){return $(this).val()}).get() : $(".refSemiMobiliaMobile:checked").map(function(){return $(this).val()}).get();
+			var refShowroom = aux == 1 ? $(".refShowroom:checked").map(function(){return $(this).val()}).get() : $(".refShowroomMobile:checked").map(function(){return $(this).val()}).get();
+
+			if($(".refSemMobilia:checked").val()){
+				refMobiliado = 2;
+				refSemiMobiliado = 2;
+			}
+
+			var paramsNecessidades = '&m='+refMobiliado+'&sm='+refSemiMobiliado+'&sh='+refShowroom;
+		}
+
+
+		var ordenar = aux == 1 ? $(".ordenar:checked").val() : $(".ordenarMobile:checked").val();
+		var areaInicial = aux == 1 ? apenasNum($("#slider-area-min").text()) : apenasNum($("#slider-area-avancada-min").text());
+		var areaFinal = aux == 1 ? apenasNum($("#slider-area-max").text()) : apenasNum($("#slider-area-avancada-max").text());
+		var valorInicial =  aux == 1 ? apenasNum($("#slider-valor-min").text()) : apenasNum($("#slider-valor-avancada-min").text());
+		var valorFinal =  aux == 1 ? apenasNum($("#slider-valor-max").text()) : apenasNum($("#slider-valor-avancada-max").text());
+		var dacao = (aux == 1) ? $(".dacao:checked").val() : $(".dacao:checked").val();
+		var dacao_param = ( $(".dacao:checked").val() ) ? '&dacao='+dacao : '';
+
+		
+		
+		if(aux == 1){
+			var ariaAtualLowerBarraValor = apenasNum($("#slider-barra-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-lower").attr("aria-valuenow"));
+			var ariaAtualUpperBarraValor = apenasNum($("#slider-barra-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-upper").attr("aria-valuenow"));
+			var ariaAtualLowerBarraArea = apenasNum($("#slider-barra-area").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-lower").attr("aria-valuenow"));
+			var ariaAtualUpperBarraArea = apenasNum($("#slider-barra-area").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-upper").attr("aria-valuenow"));
+		}else{
+			var ariaAtualLowerBarraValor = apenasNum($("#slider-barra-avancada-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-lower").attr("aria-valuenow"));
+			var ariaAtualUpperBarraValor = apenasNum($("#slider-barra-avancada-valor").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-upper").attr("aria-valuenow"));
+			var ariaAtualLowerBarraArea = apenasNum($("#slider-barra-avancada-area").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-lower").attr("aria-valuenow"));
+			var ariaAtualUpperBarraArea = apenasNum($("#slider-barra-avancada-area").find(".noUi-base").find(".noUi-origin").find(".noUi-handle-upper").attr("aria-valuenow"));
+		}
+
+					var getAp = '';
+		
+
+		if(ariaAtualLowerBarraValor == 0){
+			valorInicial = "";
+		}
+
+		if(ariaAtualUpperBarraValor == 1000){
+			valorFinal = "";
+		}
+
+		if(ariaAtualLowerBarraArea == 0 && ariaAtualUpperBarraArea == 1000){
+			areaInicial = "";
+			areaFinal = "";
+		}
+		var countCidadesSelecionadas = 0;
+		$(".refCidade:checked").each(function (){
+			countCidadesSelecionadas++;
+		})
+		var qtdCidadesSelecionadas = countCidadesSelecionadas;
+
+		if(qtdCidadesSelecionadas > 1){
+			refBairro = "";
+		}
+
+		if (!refTipo.trim) {
+			refTipo = '';
+		}
+
+		
+			var path = '&t='+refTipo+'&p='+refPreferencia+'&d='+refDorm+'&per='+refPerfil+'&c='+refCidade+'&ba='+refBairro+'&s='+refSuite+'&g='+refGaragem+paramsNecessidades+'&or='+ordenar+'&ai='+areaInicial+'&af='+areaFinal+'&vi='+valorInicial+'&vf='+valorFinal+'&ap='+getAp+dacao_param;
+
+		
+		console.log("PATH = "+path);
+		$("#new-spinner").show();
+		window.location.href=path;
+		if (!length_box_necessidades) {}
+
+	}
+
+
+
+	$("#refOperacao").change(function () {
+		var refOperacao = $(this).val();
+		$("#new-spinner").show();
+		window.location.href='https://www.calebeimoveisitapema.com.br/'+refOperacao+'//';
+	});
+
+	$("#refTipo").change(function () {
+		var refTipo = $(this).val();
+		$("#new-spinner").show();
+		window.location.href='?t='+refTipo+'';
+	});
+	$("#refinarTipo").change(function () {
+		var refTipo = $(this).val();
+		$("#new-spinner").show();
+		window.location.href='../?t='+refTipo+'';
+	});
+
+
+	/*$(".refGaragem").click(function () {
+		salvarFiltros(1);
+	});*/
+
+	$(".refSemMobilia").click(function(){
+		console.log("remove check");
+		$(".refMobiliado, .refSemiMobilia").prop('checked', false);
+	});
+
+	$(".refMobiliado, .refSemiMobilia").click(function(){
+		console.log("remove check");
+		$(".refSemMobilia").prop('checked', false);
+	});
+
+	/* SEM MOBILIA MOBILE */
+	$(".semMobiliaCheck").click(function(){
+		console.log("remove check");
+		$(".mobiliaCheck, .semiMobiliaCheck").prop('checked', false);
+	});
+
+	$(".mobiliaCheck, .semiMobiliaCheck").click(function(){
+		console.log("remove check");
+		$(".semMobiliaCheck").prop('checked', false);
+	});
+	/* SEM MOBILIA MOBILE */
+
+
+			$(".garmob .refMobiliado").click(function () {
+			salvarFiltros(1);
+		});
+
+		$(".garmob .refSemiMobilia").click(function () {
+			salvarFiltros(1);
+		});
+
+		$(".garmob .refSemMobilia").click(function () {
+			salvarFiltros(1);
+		});
+	
+
+	$(".ordenar").click(function (){
+		salvarFiltros(1);
+	});
+
+	$("#op-dacao .dacao").click(function (){
+		salvarFiltros(1);
+	});
+
+
+	
+
+	function validaOverlay(){
+		$(".fecharCheckbox").click();
+		$("body").removeClass(overlay_active());
+	}
+
+	function class_on_top(element){
+		var this_id = $(element).attr("id") + "-opened";
+		var content_id = $("#conteudo");
+		content_id.toggleClass(this_id);
+	}
+
+
+
+	$("#btnDormitorios, #btnPerfil ,#btnTipo , #btnCidade , #btnPreferencia , #btnSuites , #btnGaragem , #btnExigencias , #btnBairro , #btnPerfilModal , #btnDormitoriosModal , #btnCidadeModal , #btnPreferenciaModal , #btnBairroModal ").click(function () {
+					class_on_top(this);
+	});
+
+	$("#btnDormitorios").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxDormitorios").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxDormitorios");
+		}
+	});
+
+	$("#btnMobiliado").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxMobiliado").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxMobiliado");
+		}
+	});
+
+	$("#btnPerfil").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxPerfil").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxPerfil");
+
+		}
+	});
+
+	$("#btnTipo").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxTipo").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxTipo");
+
+		}
+	});
+
+	$("#btnCidade").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxCidade").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxCidade");
+
+		}
+	});
+
+	$("#btnPreferencia").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxPreferencia").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxPreferencia");
+
+		}
+	});
+
+	$("#btnSuites").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxSuites").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxSuites");
+
+		}
+	});
+
+	$("#btnMobilia").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxMobilia").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxMobilia");
+
+		}
+	});
+
+	$("#btnGaragem").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxGaragens").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxGaragens");
+
+		}
+	});
+
+
+	$("#btnExigencias").click(function () {
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxExigencias").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxExigencias");
+		}
+	});
+
+	$("#btnBairro").click(function () {
+
+		set_top_to_apply();
+
+		var click = $(this).attr('class');
+		$("#filtrarImoveis").fadeOut();
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		class_on_top(this);
+		if(click=="btnRefinar"){
+			class_on_top(this);
+			$("#boxBairro").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxBairro");
+		}
+	});
+
+	/**Tratamento Modal**/
+
+	$("#btnPerfilModal").click(function () {
+		var click = $(this).attr('class');
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxPerfilModal").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxPerfilModal");
+		}
+	});
+
+	$("#btnDormitoriosModal").click(function () {
+		var click = $(this).attr('class');
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxDormitoriosModal").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxDormitoriosModal");
+		}
+	});
+
+	$("#btnCidadeModal").click(function () {
+		var click = $(this).attr('class');
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxCidadeModal").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxCidadeModal");
+		}
+	});
+
+	$("#btnPreferenciaModal").click(function () {
+		var click = $(this).attr('class');
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxPreferenciaModal").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxPreferenciaModal");
+		}
+	});
+
+	$("#btnBairroModal").click(function () {
+		var click = $(this).attr('class');
+		$(".boxRefinar").fadeOut(0);
+		$(".btnRefinar").removeClass('ativo');
+		if(click=="btnRefinar"){
+			$("#boxBairroModal").fadeIn();
+			$(this).addClass('ativo');
+			addOverlay("#boxBairroModal");
+		}
+	});
+
+
+	/*****/
+
+
+	
+
+	/* Filtros */
+			$(".boxRefinar").each(function (){
+			$(this).prepend("<div class='fecharCheckbox'><i class='fa fa-times'></i> </div>")
+		})
+	
+	$(".fecharCheckbox, .closeBoxRefinar , .fecharCheckboxBtn, .ativo").click(function (){
+		$(".overlay").remove();
+		$(".boxRefinar").fadeOut(0);
+		$(".boxRefinar").removeClass('opened');
+		$(".btnRefinar").removeClass('ativo');
+		$("#conteudo").removeClass("btnBairro-opened");
+		$("#filtrarImoveis").fadeIn(0);
+	})
+	function set_top_to_apply(){
+		var boxBairro_height = $("#boxBairro").outerHeight();
+		var boxBairro_aplicar_height = $("#boxBairro_aplicar").outerHeight();
+		var soma_altura_divs = parseFloat(boxBairro_height) + parseFloat(boxBairro_aplicar_height);
+		$("#boxBairro_aplicar").css('top',soma_altura_divs+"px");
+	}
+	$(document).ready(function(){
+		set_top_to_apply();
+	});
+
+	/* Especial filtro Mobile Master */
+		/* ----------------------------- */
+
+	
+	$("#boxDormitorios > .fecharCheckbox, #boxDormitorios > .closeBoxRefinar, #boxDormitorios > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		var count_suites = 0;
+		$(".homeDorm:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileDormitorios:checked").each(function (){
+			count++;
+		});
+		if(count > 0){
+			$("#btnDormitorios").append("<span class='contadorDormitorios'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnDormitorios > span").each(function (){
+				$(this).remove();
+			});
+		}
+
+					salvarFiltros(1);
+			})
+
+	$(document).ready(function(){
+		show_count_span();
+	});
+
+	$("#boxRefinarNecessidades > .fecharCheckbox").on("click", function(){
+		show_count_span();
+
+		run_filters(1);
+
+	});
+	function show_count_span(){
+		var count_checked = 0;
+		var btn_select_id  = "#btnRefinarNecessidades";
+		var btnRefinarNecessidades  = $(btn_select_id);
+		var class_contador_span = "contadorNecessidades";
+		var id_contador_span = "count_necessidades";
+		var span_default_necessidades = $("#default_necessidades");
+		var has_items_class = "has-items";
+		var input_checked_class = ".refNecessidade:checked";
+
+		var labels = get_labels_checked(input_checked_class);
+		count_checked = labels.length;
+		console.log("count_checked = "+count_checked);
+
+		var html_labels = put_html_label_selected(labels);
+
+		var html_span = mount_span_count(class_contador_span,id_contador_span,count_checked);
+
+
+		if(count_checked > 0){
+			span_default_necessidades.html( html_labels );
+
+			btnRefinarNecessidades.addClass(has_items_class);
+
+			var new_span = $(html_span).hide();
+			$(btn_select_id).append(new_span);
+			new_span.show("slow");
+		}else{
+			btnRefinarNecessidades.removeClass(has_items_class);
+			$("#"+id_contador_span).remove();
+		}
+	}
+	function get_labels_checked(input_checked_class){
+		var labels = [];
+		$(input_checked_class).each(function (){
+			$element = $(this);
+			var $label = $("label[for='"+$element.attr('id')+"']");
+			labels.push($label.text());
+		});
+		return labels;
+	}
+	function put_html_label_selected(labels){
+		var html_labels = "";
+		$.each( labels, function( key, value ) {
+			var value_lower = value.replace(/ /g,'').toLowerCase();;
+			html_labels += "<span class='label-items-options label-"+key+" ' id='"+value_lower+"-item' >";
+			html_labels += value;
+			html_labels += "</span>";
+		});
+		return html_labels;
+	}
+	function mount_span_count(class_contador_span,id_contador_span,count_checked){
+		var html_span 	 = "<span class = ' "+class_contador_span+" ' id='"+id_contador_span+"' >";
+		html_span 		+= count_checked+" <i class = 'fa fa-check'></i>";
+		html_span 		+= "</span>";
+		return html_span;
+	}
+
+	function run_filters(val){
+					salvarFiltros(val);
+			}
+
+	$("#boxMobiliado > .fecharCheckbox, #boxMobiliado > .closeBoxRefinar, #boxMobiliado > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refMobilia:checked").each(function (){
+			count++;
+		})
+
+		if(count > 0){
+			$("#btnMobiliado").append("<span class='contadorMobiliado contador-teste'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnMobiliado > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxSuites > .fecharCheckbox, #boxSuites > .closeBoxRefinar, #boxSuites > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refSuite:checked").each(function (){
+			count++;
+		})
+
+		if(count > 0){
+			$("#btnSuites").append("<span class='contadorSuites contador-teste'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnSuites > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxCidade > .fecharCheckbox, #boxCidade > .closeBoxRefinar, #boxCidade > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".homeCidade:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileCidade:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnCidade").append("<span class='contadorCidades'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnCidade > span").not( ".spanTitulo" ).each(function (){
+				$(this).remove();
+			});
+		}
+					console.log("filtro cidade:quemsomos");
+			salvarFiltros(1);
+			})
+
+	$("#boxPerfil > .fecharCheckbox, #boxPerfil > .closeBoxRefinar, #boxPerfil > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".homePerfil:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobilePerfil:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnPerfil").append("<span class='contadorPerfil'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnPerfil > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxTipo > .fecharCheckbox, #boxTipo > .closeBoxRefinar, #boxTipo > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refTipo:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileTipo:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnTipo").append("<span class='contadorTipo'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnTipo > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxBairro > .fecharCheckbox, #boxBairro > .closeBoxRefinar, #boxBairro > .fecharCheckboxBtn, .div-list-neighborhood .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".homeBairro:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileBairro:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnBairro").append("<span class='contadorPerfil'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnBairro > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxPreferencia > .fecharCheckbox, #boxPreferencia > .closeBoxRefinar, #boxPreferencia > .fecharCheckboxBtn ").on("click", function(){
+
+		var count = 0;
+		$(".homePreferencia:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileDistancia:checked").each(function (){
+			count++;
+		})
+		$(".refPreferencia:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnPreferencia").append("<span class='contadorPreferencia'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnPreferencia > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+	$("#boxGaragens > .fecharCheckbox,#boxGaragens  .fecharCheckboxBtn , #boxGaragens > .closeBoxRefinar, #boxGaragens > .fecharCheckboxBtn ").on("click",
+		function(){
+
+		var count = 0;
+		$(".homeGaragem:checked").each(function (){
+			count++;
+		})
+		$(".filtrarMobileDistancia:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnGaragem").append("<span class='contadorGaragem'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnGaragem > span").each(function (){
+				$(this).remove();
+			});
+		}
+					salvarFiltros(1);
+			})
+
+
+	/* Especial filtro Mobile Master */
+		/* ----------------------------- */
+
+	$("#boxDormitoriosModal > .fecharCheckbox, #boxDormitoriosModal > .closeBoxRefinar, #boxDormitoriosModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refDormMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnDormitoriosModal").append("<span class='contadorDormitoriosModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnDormitoriosModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxPerfilModal > .fecharCheckbox, #boxPerfilModal > .closeBoxRefinar, #boxPerfilModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refPerfilMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnPerfilModal").append("<span class='contadorPerfilModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnPerfilModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxTipoModal > .fecharCheckbox, #boxTipoModal > .closeBoxRefinar, #boxTipoModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refTipoMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnTipoModal").append("<span class='contadorTipoModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnTipoModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxPreferenciaModal > .fecharCheckbox, #boxPreferenciaModal > .closeBoxRefinar, #boxPreferenciaModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refPreferenciaMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnPreferenciaModal").append("<span class='contadorPreferencialModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnPreferenciaModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxGaragemModal > .fecharCheckbox, #boxGaragemModal > .closeBoxRefinar, #boxGaragemModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refGaragemMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnGaragemModal").append("<span class='contadorGaragemModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnGaragemModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxCidadeModal > .fecharCheckbox, #boxCidadeModal > .closeBoxRefinar, #boxCidadeModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refCidadeMobile:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnCidadeModal").append("<span class='contadorCidadeModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnCidadeModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+	$("#boxBairroModal > .fecharCheckbox, #boxBairroModal > .closeBoxRefinar, #boxBairroModal > .fecharCheckboxBtn ").on("click", function(){
+		var count = 0;
+		$(".refMobileBairro:checked").each(function (){
+			count++;
+		})
+		if(count > 0){
+			$("#btnBairroModal").append("<span class='contadorBairroModal'>"+count+" <i class='fa fa-check'></i></span>");
+		}else{
+			$("#btnBairroModal > span").each(function (){
+				$(this).remove();
+			});
+		}
+	})
+
+
+	/***Tratamento Bairros ****/
+
+		var countCidades = contaCidadesSelecionadas();
+		var countCidadesModal = contaCidadesSelecionadasModal();
+
+		if(countCidades == 1){
+			var retorno = "";
+
+												retorno = validaBairrosCidade($(".refCidade:checked").val(), 'ref');
+							
+			$("#btnBairro").removeClass("bairrosDesativados");
+			if(retorno == false){
+				$("#btnBairro").addClass("bairrosDesativados");
+				$("#btnBairro > span").each(function (){
+					$(this).remove();
+				});
+			}
+
+
+		}else{
+			$("#btnBairro").addClass("bairrosDesativados");
+			$("#btnBairro > span").each(function (){
+				$(this).remove();
+			});
+		}
+
+
+		if(countCidadesModal == 1){
+			$("#btnBairroModal").removeClass("bairrosDesativados");
+			$("#boxBairroModal > label").removeAttr("style");
+			$("#boxBairroModal > input").removeAttr("style");
+
+			var retorno = validaBairrosCidade($(".refCidadeMobile:checked").val(), 'refMobile');
+
+			if(retorno == false){
+				$("#btnBairroModal").addClass("bairrosDesativados");
+			}
+
+		}else{
+			$("#btnBairroModal").addClass("bairrosDesativados");
+
+			$(".refMobileBairro:checked").each(function (){
+				$(this).remove();
+			})
+		}
+
+		function contaCidadesSelecionadas(){
+			var count = 0;
+												$(".refCidade:checked").each(function (){
+						count++;
+					})
+
+							
+			return count;
+		}
+
+		$("#boxCidade").change(function (){
+			var count = contaCidadesSelecionadas();
+
+			if(count == 1){
+				$("#btnBairro").removeClass("bairrosDesativados");
+				$("#boxBairro > label").removeAttr("style");
+				$("#boxBairro > input").removeAttr("style");
+
+				var retorno = "";
+
+															retorno = validaBairrosCidade($(".refCidade:checked").val(), 'ref');
+									
+				if(retorno == false){
+					$("#btnBairro").addClass("bairrosDesativados");
+					$("#btnBairro > span").each(function (){
+						$(this).remove();
+					});
+				}
+
+			}else{
+				$("#btnBairro").addClass("bairrosDesativados");
+				$("#btnBairro > span").each(function (){
+					$(this).remove();
+				});
+
+															$(".refBairro:checked").each(function (){
+							$(this).remove("");
+						})
+												}
+		})
+
+		$("#boxCidadeModal").change(function (){
+
+			var count = contaCidadesSelecionadasModal();
+
+			if(count == 1){
+				$("#btnBairroModal").removeClass("bairrosDesativados");
+				$("#boxBairroModal > label").removeAttr("style");
+				$("#boxBairroModal > input").removeAttr("style");
+
+				var retorno = validaBairrosCidade($(".refCidadeMobile:checked").val(), 'refMobile');
+				if(retorno == false){
+					$("#btnBairroModal").addClass("bairrosDesativados");
+				}
+
+			}else{
+				$("#btnBairroModal").addClass("bairrosDesativados");
+				$("#btnBairroModal > span").each(function (){
+					$(this).remove();
+				});
+
+				$(".refMobileBairro:checked").each(function (){
+					$(this).removeAttr("checked");
+				})
+			}
+		})
+
+		function contaCidadesSelecionadasModal(){
+			var count = 0;
+			$(".refCidadeMobile:checked").each(function (){
+				count++;
+			})
+
+			return count;
+		}
+
+		function validaBairrosCidade(codCidade, attr){
+			var soma = 0;
+			var somaTotal = 0;
+			$("."+attr+"Bairro").each(function (){
+				somaTotal++;
+				if($(this).attr("cidade") != codCidade){
+					$('label[for="'+$(this).attr("id")+'"]').css('display', 'none');
+					$(this).css('display', 'none');
+					soma++;
+				}
+			})
+
+			if(somaTotal == soma){
+				return false;
+			}else{
+				return true;
+			}
+		}
+
+	/**************************************************/
+
+	
+
+function rolaContato(){
+	var aTag = $("a[name='formContato']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+function apenasNum(string)
+{
+	if(string){
+		var numsStr = string.replace(/[^0-9]/g,'');
+		return parseInt(numsStr);
+	}else{
+		return '';
+	}
+
+
+}
+
+
+
+
+			/* BUSCAR */
+/*
+*/
+function ValidaBusca(f){
+	// var buscaVazio = $('input[name=buscar]').val();
+	// if (buscaVazio.trim()==""){
+	// 	alert('Informe Nome ou Código');return false;
+	// }
+	return true;
+}
+
+/*
+$(function () {
+	var btnFav = $('.like-icon').attr('rel');
+	marcarFavoritos(btnFav);
+
+});
+function marcarFavoritos(data){
+    var marcado = JSON.parse(sessionStorage.getItem('favoritos'));
+	var marcadox = marcado.indexOf(data);
+	console.log(marcadox);
+    if (marcadox > -1) {
+    	alert(data);
+	    $('.like-icon').addClass('liked');
+	}
+}
+*/
+
+/* JS JULIO! */
+
+
+
+
+
+
+
+
+
+
+$('#telefoneCliente').focusout(function(){
+    var phone, element;
+    element = $(this);
+    element.unmask();
+    phone = element.val().replace(/\D/g, '');
+    if(phone.length > 10) {
+        element.mask("(99) 99999-999?9");
+    } else {
+        element.mask("(99) 9999-9999?9");
+    }
+}).trigger('focusout');
+
+function nosTeLigamos(){
+
+	if($('[name=nomeCliente]').val() == '' || $('[name=nomeCliente]').val() == null){
+
+		swal("Atenção!", "Informe seu nome", "error");
+
+	}else if($('[name=telefoneCliente]').val() == '' || $('[name=telefoneCliente]').val() == null){
+
+		swal("Atenção!", "Informe o seu telefone", "error");
+
+	}else if($('[name=assuntoCliente]').val() == '' || $('[name=assuntoCliente]').val() == null){
+
+		swal("Atenção!", "Informe o assunto da ligação", "error");
+
+	}else{
+
+		var formNosTeLigamos = $("#formNosTeLigamos").serialize();
+			formNosTeLigamos += '&ajax=true';
+			formNosTeLigamos += '&idimobiliaria=';
+
+		$.ajax({
+	    	type: "POST",
+	    	url: "nosTeLigamos",
+	      	data: formNosTeLigamos,
+	      	success: function(response){
+	      		swal({
+					title: "Dados enviados com sucesso",
+					html: "",
+					type: "success"
+				},
+				function(){
+					location.reload();
+				});
+	      	}
+	    });
+	}
+}
+
+if ($('#ouibounce-modal .usuario_telefone').length) {
+	console.log("#ouibounce-modal .usuario_telefone LOADED");
+	$('#ouibounce-modal .usuario_telefone').focusout(function(){
+		var phone, element;
+		element = $(this);
+		element.unmask();
+		phone = element.val().replace(/\D/g, '');
+		if(phone.length > 10) {
+			element.mask("(99) 99999-999?9");
+		} else {
+			element.mask("(99) 9999-9999?9");
+		}
+	}).trigger('focusout');
+}
+
+function receberNovidades(){
+
+
+	if($('[name=nomeUsuario]').val() == '' || $('[name=nomeUsuario]').val() == null){
+
+		swal("Atenção!", "Informe seu nome", "error");
+
+	}else if($('[name=telefoneUsuario]').val() == '' || $('[name=telefoneUsuario]').val() == null){
+
+		swal("Atenção!", "Informe o seu telefone", "error");
+
+	}else if($('[name=emailUsuario]').val() == '' || $('[name=emailUsuario]').val() == null){
+
+		swal("Atenção!", "Informe seu e-mail", "error");
+
+	}else{
+
+		$("#new-spinner").show();
+
+		var receberNovidades = $("#formRecebaNovidades").serialize();
+		receberNovidades += '&ajax=true';
+		receberNovidades += '&idimobiliaria=';
+
+		$.ajax({
+			type: "POST",
+			url: "receberNovidades",
+			data: receberNovidades,
+			success: function(response){
+				$("#new-spinner").hide();
+				$('#ouibounce-modal').hide();
+				swal({
+					title: "Dados enviados com sucesso",
+					html: "",
+					type: "success"
+				},
+				function(){
+					location.reload();
+				});
+			}
+		});
+	}
+}
+
+$(".btn-select-pais-contato").click(function (e){
+	e.preventDefault();
+	var ul = $(this).find("ul");
+	if ($(this).hasClass("active")) {
+	  var pais = $(e.target).attr('data-pais');
+	  var codigo = $(e.target).attr('data-pais-cod');
+	  var ddi = $(e.target).attr('data-fone');
+	  ul.find("li[data-pais='"+pais+"']").addClass("selected").siblings().removeClass("selected");
+	  var value = ul.find("li[data-pais='"+pais+"']").html();
+	  $(this).find(".btn-select-pais-value").html(value);
+	  $(this).find("input[name=pais]").val(codigo);
+	  $(this).find("input[name=ddi]").val(ddi);
+	  $(".pais-input-contato").change();
+	  $(".btn-select-pais-value .nome_pais_contato").hide();
+	  ul.hide();
+	  $(this).removeClass("active");
+	}else{
+		$('.btn-select-pais-contato').not(this).each(function () {
+		    $(this).removeClass("active").find("ul").hide();
+		});
+		ul.slideDown(300);
+		$(this).addClass("active");
+	}
+});
+
+$(".pais-input-contato" ).change(function(){
+	if ($("input[name=pais]").val() == 76){
+		$("input[name=ddd]").show().val("").attr("required", "required");
+		$("input[name=fone]").trigger("unmask");
+		$("input[name=fone]").css("width","42%");
+		$("input[name=fone]").val("");
+	}else{
+		$("input[name=ddd]").hide().removeAttr("required");
+		$("input[name=fone]").trigger("unmask");
+		$("input[name=fone]").css("width","61%");
+		$("input[name=fone]").val("");
+	}
+});
+
+$('input[name=fone]').focusout(function(){
+	if ($(".pais-input-contato").val()==76) {
+	    var phone, element;
+	    element = $(this);
+	    element.trigger("unmask");
+	    phone = element.val().replace(/\D/g, '');
+	    if(phone.length > 8) {
+	        element.mask("99999-999?9");
+	    } else {
+	        element.mask("9999-9999?9");
+	    }
+	}
+});
+
+
+$(".btn-select-pais").click(function (e){
+	e.preventDefault();
+	var ul = $(this).find("ul");
+	if ($(this).hasClass("active")) {
+	  var pais = $(e.target).attr('data-pais');
+	  var codigo = $(e.target).attr('data-pais-cod');
+	  var ddi = $(e.target).attr('data-fone');
+	  ul.find("li[data-pais='"+pais+"']").addClass("selected").siblings().removeClass("selected");
+	  var value = ul.find("li[data-pais='"+pais+"']").html();
+	  $(this).find(".btn-select-pais-value").html(value);
+	  $(this).find("input[name=paisLead]").val(codigo);
+	  $(this).find("input[name=ddiLead]").val(ddi);
+	  $(".btn-select-pais-input" ).change();
+	  $(".btn-select-pais-value #nome_pais").hide();
+	  ul.hide();
+	  $(this).removeClass("active");
+	}else{
+		$('.btn-select-pais').not(this).each(function () {
+		    $(this).removeClass("active").find("ul").hide();
+		});
+		ul.slideDown(300);
+		$(this).addClass("active");
+	}
+});
+
+$(".btn-select-pais-input").change(function(){
+	$('[name=foneLead]').val("");
+	$('[name=foneLead]').attr("placeholder","Telefone");
+	$('[name=foneLead]').unmask();
+});
+
+$('[name=foneLead]').focusout(function(){
+	if ($(".btn-select-pais-input").val()==76 || !$(".btn-select-pais-input").val()) {
+	    var phone, element;
+	    element = $(this);
+	    element.unmask();
+	    phone = element.val().replace(/\D/g, '');
+	    if(phone.length > 12) {
+	        element.mask("(99) 99999-999?9");
+	    } else {
+	        element.mask("(99) 9999-9999?9");
+	    }
+	}
+}).trigger('focusout');
+
+$("#closePopupEntrada").click(function(){
+    $("#modalEntrada").hide();
+});
+
+function modal_entrada(){
+
+	var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+	var validaNome 	 = "";
+	var validaFone 	 = "";
+	var validaEmail  = "";
+	var validaCidade = "";
+
+	if(($('[name=nomeLead]').val().trim() == '' || $('[name=nomeLead]').val() == null) && (validaNome==1)){
+
+		swal("Atenção!", "Informe seu nome", "error");
+
+	}else if(($('[name=foneLead]').val() == '' || $('[name=foneLead]').val() == null) && (validaFone==1)){
+
+		swal("Atenção!", "Informe o seu telefone", "error");
+
+	}else if(($('[name=emailLead]').val() == '' || $('[name=emailLead]').val() == null || filter.test($('[name=emailLead]').val())==false) && (validaEmail==1)){
+
+		swal("Atenção!", "Informe um E-mail Válido", "error");
+
+	}else if(($('[name=cidadeLead]').val() == '' || $('[name=cidadeLead]').val() == null) && (validaCidade==1)){
+
+		swal("Atenção!", "Informe sua cidade", "error");
+
+	}else{
+
+		$("#new-spinner").show();
+
+		var leadPopUp = $("#formModalEntrada").serialize();
+		leadPopUp += '&ajax=true';
+		leadPopUp += '&idimobiliaria=';
+
+		$.ajax({
+			type: "POST",
+			url: "registrarLeadPopup",
+			data: leadPopUp,
+			success: function(response){
+				$("#new-spinner").hide();
+				swal({
+					title: "Dados enviados com sucesso",
+					html: "",
+					type: "success"
+				},
+				function(){
+					$("#modalEntrada").hide();
+				});
+			}
+		});
+	}
+}
+
+function modal_lead(){
+
+	var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+	var validaNome 	 = "";
+	var validaFone 	 = "";
+	var validaEmail  = "";
+	var validaCidade = "";
+
+	if(($('[name=nomeLead]').val().trim() == '' || $('[name=nomeLead]').val() == null) && (validaNome==1)){
+
+		swal("Atenção!", "Informe seu nome", "error");
+
+	}else if(($('[name=foneLead]').val() == '' || $('[name=foneLead]').val() == null) && (validaFone==1)){
+
+		swal("Atenção!", "Informe o seu telefone", "error");
+
+	}else if(($('[name=emailLead]').val() == '' || $('[name=emailLead]').val() == null || filter.test($('[name=emailLead]').val())==false) && (validaEmail==1)){
+
+		swal("Atenção!", "Informe um E-mail Válido", "error");
+
+	}else if(($('[name=cidadeLead]').val() == '' || $('[name=cidadeLead]').val() == null) && (validaCidade==1)){
+
+		swal("Atenção!", "Informe sua cidade", "error");
+
+	}else{
+
+		// $("#new-spinner").show();
+
+		var leadPopUp = $("#formModalLead").serialize();
+		leadPopUp += '&ajax=true';
+		leadPopUp += '&idimobiliaria=';
+
+		swal("Dados enviados com sucesso","","success");
+
+		$.ajax({
+			type: "POST",
+			url: "registrarLeadPopup",
+			data: leadPopUp,
+			success: function(response){
+				$("#new-spinner").hide();
+				swal({
+					title: "Dados enviados com sucesso",
+					html: "",
+					type: "success"
+				},
+				function(){
+					location.reload();
+				});
+			}
+		});
+	}
+}
+
+
+
+/* --------------- INÍCIO CADASTRO SEU IMÓVEL ---------------------------*/
+/* --------------- FIM CADASTRO SEU IMÓVEL ---------------------------*/
+
+
+/* --------------- INÍCIO FAÇA SEU CADASTRO ---------------------------*/
+/* --------------- FIM FAÇA SEU CADASTRO ---------------------------*/
+
+jQuery(document).ready(function($) {
+			$("#ListaBlog .compartilhar a").click(function(){
+			var idBlog = $(this).data("id");
+			var rede = $(this).data("rede");
+			var url = encodeURIComponent($("#"+idBlog).find(".leiaMais a").attr('href'));
+			var l = '';
+
+			if ((rede=='facebook') || (rede=='telegram') || (rede=='twitter') || (rede=='whatsapp')){
+				var randomico = Math.floor((Math.random() * 10000) + 1);
+				if (rede=='facebook'){
+					l = "https://www.facebook.com/sharer/sharer.php?u="+url;
+				}
+
+				if (rede=='telegram'){
+					l = "https://t.me/share/url?url="+url;
+				}
+
+				if (rede=='twitter'){
+					var titulo = encodeURIComponent($("#"+idBlog).find(".titulo").text());
+					l = 'https://twitter.com/home?status='+titulo+' - '+url;
+				}
+
+				if (rede=='whatsapp'){
+					var titulo = encodeURIComponent($("#"+idBlog).find(".titulo").text());
+					l = 'https://api.whatsapp.com/send?text='+titulo+' - '+url;
+				}
+				window.open(l,rede+'_dialog','width=626,height=436');
+				return false;
+			}
+		});
+	
+});
+
+/********Testes Mobile - Refinar Busca*************/
+
+	//Ao Abrir o Modal, esconde o botão de "Refinar Busca"
+	$('#modalRefinarBuscaMobile').on('shown.bs.modal', function (e) {
+		$(".btnRefinarMobile").hide();
+	});
+
+	//Ao fechar o modal, mostra o botão de "Refinar Busca"
+	$('#modalRefinarBuscaMobile').on('hidden.bs.modal', function () {
+		$(".btnRefinarMobile").show();
+	})
+
+	function maxLengthCheck(object)
+  {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+
+	$("#btnContatoWhats").on('click', function (){
+			if($("#nomeClienteWhatsapp").val() == null || $("#nomeClienteWhatsapp").val() == ""){
+				alert("Para iniciar o contato, informe o seu nome.");
+			}else{
+
+				var contatoWhats = $(this).attr("contatoWhats");
+				//Salvar no banco de dados as informações
+    				$.post("whatsapp",
+    				{
+    					ajax: true,
+       					telefoneCorretor: $(this).attr("contatoWhats"),
+        				linkImovel : $("#linkImovelWhatsapp").val(),
+        				via: $("#viaWhatsapp").val(),
+        				tipo_site: $("#tipo_site").val(),
+        				nomeCliente: $("#nomeClienteWhatsapp").val(),
+        				idImobiliaria: $("#idImobiliariaWhatsapp").val()
+    				},function(){
+    					//Tratamento do Contato do Whatsapp
+
+						var url = 'https://api.whatsapp.com/send?l=pt_br&phone='+contatoWhats+'&text=Oi, meu nome é '+$("#nomeClienteWhatsapp").val()+' e estou interessado nesse imóvel de código '+$("#idImovelWhatsapp").val()+' e gostaria de mais detalhes. https://www.calebeimoveisitapema.com.br/quemsomos';
+						window.location = url;
+    				}
+				);
+		}
+	});
+
+	$("#btnContatoWhatsTodasPg").on('click', function (){
+			if($("#nomeClienteWhatsapp").val() == null || $("#nomeClienteWhatsapp").val() == ""){
+				alert("Para iniciar o contato, informe o seu nome.");
+			}else{
+
+				var contatoWhats = $(this).attr("contatoWhats");
+				//Salvar no banco de dados as informações
+    				$.post("whatsapp",
+    				{
+    					ajax: true,
+       					telefoneCorretor: $(this).attr("contatoWhats"),
+        				linkImovel : $("#linkImovelWhatsapp").val(),
+        				via: $("#viaWhatsapp").val(),
+        				tipo_site: $("#tipo_site").val(),
+        				nomeCliente: $("#nomeClienteWhatsapp").val(),
+        				idImobiliaria: $("#idImobiliariaWhatsapp").val()
+    				},function(){
+    					//Tratamento do Contato do Whatsapp
+
+						var url = 'https://api.whatsapp.com/send?l=pt_br&phone='+contatoWhats;
+						window.location = url;
+    				}
+				);
+		}
+	});
+
+
+
+	/**************************************************/
+
+
+		/* GOOGLE TRADUTOR */
+		function translateLanguage(lang) {
+			var frame = $('iframe.skiptranslate');
+            if (!frame.length) {
+                alert("Erro: Não foi possível realizar a tradução.");
+                return false;
+            }
+            frame.contents().find('a span.text:contains(' + lang + ')').get(0).click();
+            $(".idiomasPossiveis").css({"display":"none"});
+			
+            atualizaIdiomaSelecionado(lang);
+
+            return false;
+        }
+
+       function atualizaIdiomaSelecionado(aux){
+			
+       		// var pegaSelecionaIdioma = $(".goog-te-menu-value > span").html();
+
+			// if(pegaSelecionaIdioma=="Selecione o idioma" || pegaSelecionaIdioma == ""){
+
+			// 	$(".goog-te-gadget-simple .goog-te-menu-value span:nth-child(1)").html("Português");
+
+	        //     $("body").removeAttr("class");
+	        //     $("body").addClass('idioma-portugues');
+
+			// }
+
+			if(aux=='' || aux=='Português'){
+				$("body").removeAttr("class");
+	            $("body").addClass('idioma-portugues');
+			}
+
+			// switch($(".goog-te-gadget-simple .goog-te-menu-value span:nth-child(1)").html()){
+			switch(aux){
+				case "Português":
+					var html = "<img src='https://montagem.sigasoft.com.br/arquivos/brazil_flag.png' class='iconBandeiras' style='position: absolute;width:29px' /> <span style='margin-left:35px'>Português</span>";
+					$("body").removeAttr("class");
+	            	$("body").addClass('idioma-portugues');
+					break;
+
+				case "Inglês":
+					var html = "<img src='https://montagem.sigasoft.com.br/arquivos/eua_flag.png' class='iconBandeiras' style='position: absolute;width:29px' /> <span style='margin-left:35px'>Inglês</span>";
+					$("body").removeAttr("class");
+	            	$("body").addClass('idioma-ingles');
+					break;
+
+				case "Espanhol":
+					var html = "<img src='https://montagem.sigasoft.com.br/arquivos/spain_flag.png' class='iconBandeiras' style='position: absolute;width:29px' /> <span style='margin-left:35px'>Espanhol</span>";
+					$("body").removeAttr("class");
+	           		$("body").addClass('idioma-espanhol');
+					break;
+			}
+
+			$(".idiomaSelecionado").html(html);
+
+       }
+
+       $(".idioma").click(function (){
+       		if($('.idiomasPossiveis').css('display') == 'none'){
+				$(".idiomasPossiveis").css({'display':'unset'});
+				$(".idiomasPossiveis").addClass("idiomasPossiveisMenuAberto");
+			}else{
+				$(".idiomasPossiveis").css({'display':'none'});
+				$(".idiomasPossiveis").removeClass("idiomasPossiveisMenuAberto");
+			}
+       })
+
+
+	$(function(){
+
+		var $lgBtnMidiaVideo = $('#btnMidiaVideo');
+	    $lgBtnMidiaVideo.lightGallery({
+	    	download: false,
+		    counter: false,
+		    controls: false,
+		    zoom: false,
+		    fullScreen: false
+	    });
+	    $lgBtnMidiaVideo.on('onAfterOpen.lg', function(){
+	        $lgBtnMidiaVideo.data('lightGallery').modules.fullscreen.requestFullscreen();
+	    });
+
+
+		$('.container.imgsPg').lightGallery({
+		    thumbnail:true,
+		    selector: '.img'
+		});
+
+
+		$('.link360Pg').each(function (){
+			var $link360Pg = $(this);
+		    $link360Pg.lightGallery({
+		    	selector: 'this',
+			    iframe: true,
+			    iframeMaxWidth: '90%',
+			    width: '100%',
+			    download: false,
+			    counter: false,
+			    controls: false,
+			    zoom: false
+			});
+		    $link360Pg.on('onAfterOpen.lg', function(){
+		        $link360Pg.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+		/*DEPOIMENTOS SC - INICIO*/
+		$(function () {
+		$('.video-item').each(function (){
+			var $video_yt = $(this);
+		    $video_yt.lightGallery({
+		    	selector: 'this',
+			    iframe: true,
+			    videoMaxWidth: '90%',
+			    iframeMaxWidth: '50%',
+			    width: '100%',
+			    download: false,
+			    counter: false,
+			    controls: false,
+			    zoom: false
+			});
+		    $video_yt.on('onAfterOpen.lg', function(){
+		        $video_yt.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+		$('.sliderDepoimentos').owlCarousel({
+			items : 1,
+			autoPlay: 9000,
+			slideSpeed: 600,
+			nav: true
+		});
+
+		$("#sliderDepoimentos .passador-prev-button").click(function(){
+			$('.sliderDepoimentos').trigger('owl.prev');
+		});
+
+		$("#sliderDepoimentos .passador-next-button").click(function(){
+			$('.sliderDepoimentos').trigger('owl.next');
+		});
+
+	});
+		/*DEPOIMENTOS SC - FIM*/
+
+		$('.video-360-inicial').each(function (){
+			var $video_yt = $(this);
+		    $video_yt.lightGallery({
+		    	selector: 'this',
+			    iframe: true,
+			    videoMaxWidth: '90%',
+			    iframeMaxWidth: '90%',
+			    width: '100%',
+			    download: false,
+			    counter: false,
+			    controls: false,
+			    zoom: false
+			});
+		    $video_yt.on('onAfterOpen.lg', function(){
+		        $video_yt.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+		$('.imgImobRodape').each(function (){
+			var $imgImobRodape = $(this);
+		    $imgImobRodape.lightGallery({
+		    	selector: 'this',
+			    iframe: true,
+			    iframeMaxWidth: '90%',
+			    width: '100%',
+			    download: false,
+			    counter: false,
+			    controls: false,
+			    zoom: false
+			});
+		    $imgImobRodape.on('onAfterOpen.lg', function(){
+		        $imgImobRodape.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+		$('.imgFotoPrincipalPgImovel').each(function (){
+			var $imgFotoPrincipalPgImovel = $(this);
+		    $imgFotoPrincipalPgImovel.lightGallery({
+		    	selector: 'this',
+			    iframe: true,
+			    iframeMaxWidth: '90%',
+			    width: '100%',
+			    download: false,
+			    counter: false,
+			    controls: false,
+			    zoom: false
+			});
+		    $imgFotoPrincipalPgImovel.on('onAfterOpen.lg', function(){
+		        $imgFotoPrincipalPgImovel.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+		$('.imgFotosDescricao').each(function (){
+			var $imgFotosDescricao = $(this);
+		    $imgFotosDescricao.lightGallery({
+		    	selector: '.item',
+			    iframe: true,
+			    iframeMaxWidth: '90%',
+			    width: '100%',
+			    download: false,
+			    counter: true,
+			    controls: true,
+			    zoom: false
+			});
+		    $imgFotosDescricao.on('onAfterOpen.lg', function(){
+		        $imgFotosDescricao.data('lightGallery').modules.fullscreen.requestFullscreen();
+		    });
+		});
+
+
+		$(".fancybox-iframe-form_rd").fancybox({
+			padding : 4,
+			minWidth		: '615px',
+			minHeight		: '610px',
+			maxWidth		: '615px',
+			maxHeight		: '610px',
+			tpl: {
+			closeBtn : '<div class="fecharIframe" style="padding: 5px; padding-left: 10px; width: 35px; height: 35px; padding-right: 10px; position: absolute;  text-align: center; line-height: 25px; top: -15px; right: -15px; background-color: #D51B1D; font-size: 15px; cursor: pointer; color: #FFFFFF;"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".fancybox-iframe-indicadores").fancybox({
+			padding : 4,
+			minWidth		: '615px',
+			minHeight		: '500px',
+			maxWidth		: '615px',
+			maxHeight		: '500px',
+			tpl: {
+			closeBtn : '<div class="fecharIframe" style="padding: 5px; padding-left: 10px; width: 35px; height: 35px; padding-right: 10px; position: absolute;  text-align: center; line-height: 25px; top: -15px; right: -15px; background-color: #D51B1D; font-size: 15px; cursor: pointer; color: #FFFFFF;"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".fancybox-iframe-simulador-escritura").fancybox({
+			padding : 4,
+			minWidth		: '780px',
+			minHeight		: '585px',
+			maxWidth		: '780px',
+			maxHeight		: '585px',
+			tpl: {
+			closeBtn : '<div class="fecharIframe" style="padding: 5px; padding-left: 10px; width: 35px; height: 35px; padding-right: 10px; position: absolute;  text-align: center; line-height: 25px; top: -15px; right: -15px; background-color: #D51B1D; font-size: 15px; cursor: pointer; color: #FFFFFF;"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".fancybox-iframe-cookies-privacidade").fancybox({
+			padding : 4,
+			minWidth		: '800px',
+			minHeight		: '600px',
+			maxWidth		: '800px',
+			maxHeight		: '600px',
+			tpl: {
+			closeBtn : '<div class="fecharIframe" style="padding: 5px; padding-left: 10px; width: 35px; height: 35px; padding-right: 10px; position: absolute;  text-align: center; line-height: 25px; top: -15px; right: -15px; background-color: #D51B1D; font-size: 15px; cursor: pointer; color: #FFFFFF;border-radius:50%;"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".modal-open-text").click(function(){
+			$('#modal-cookies .modal-content').load('https://www.calebeimoveisitapema.com.br/modal-privacidade-texto?ajax=1',function(){
+				$('#modal-cookies').modal({show:true});
+			});
+		});
+
+		$(".fancybox-iframe-investidores").fancybox({
+			padding : 4,
+			minWidth		: '780px',
+			minHeight		: '585px',
+			maxWidth		: '780px',
+			maxHeight		: '585px',
+			tpl: {
+			closeBtn : '<div class="fecharIframe" style="padding: 5px; padding-left: 10px; width: 35px; height: 35px; padding-right: 10px; position: absolute;  text-align: center; line-height: 25px; top: -15px; right: -15px; background-color: #D51B1D; font-size: 15px; cursor: pointer; color: #FFFFFF;"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".fancybox-mapa-imoveis").fancybox({
+			padding : 4,
+			width		: '95%',
+			height		: '90%',
+			tpl: {
+			closeBtn : '<div class="fecharIframe"> <i class="fa fa-times"></i> </div>',
+			},
+			helpers	: {
+				overlay	: { css : { 'background' : 'rgba(0, 0, 0, 0.7)' }}
+			}
+		});
+
+		$(".fancybox-disponibilidade").fancybox({
+			padding: 5,
+			minWidth	: 992,
+			minHeight	: 640,
+			maxWidth	: 992,
+			maxHeight	: 640,
+			fitToView	: false,
+			width		: '100%',
+			height		: '100%',
+			type: "iframe",
+			autoSize	: true,
+			closeClick	: false,
+			tpl: {
+				closeBtn : '<div style="position:absolute;top:-24px;right:4px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;"> &nbsp; x &nbsp;</div>',
+			},
+			helpers:  {
+				overlay : {
+					closeClick : true
+				},
+			},
+
+			openEffect	: 'none',
+			closeEffect	: 'none',
+			baseClass: "fancybox-disponibilidade-class"
+		});
+
+	});
+
+	$(function(){
+		$(".fancybox-print").fancybox({
+			padding: 5,
+			minWidth	: 1300,
+			minHeight	: 640,
+			maxWidth	: 1300,
+			maxHeight	: 640,
+			fitToView	: false,
+			width		: '100%',
+			height		: '100%',
+			type: "iframe",
+			autoSize	: true,
+			closeClick	: false,
+			tpl: {
+				closeBtn : '<div style="position:absolute;top:-24px;right:55px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;" onclick="fancyboxPrint()"> &nbsp; Imprimir &nbsp;</div><div style="position:absolute;top:-24px;right:4px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;"> &nbsp; x &nbsp;</div>',
+			},
+			helpers:  {
+				overlay : {
+					closeClick : true
+				},
+			},
+
+			openEffect	: 'none',
+			closeEffect	: 'none',
+			beforeShow: function(){
+			 fancyboxPrint();
+			}
+		});
+
+		$(".fancybox-tour360").fancybox({
+			padding : 6,
+			fitToView	: false,
+			width		: '96%',
+			height		: '96%',
+			tpl: {
+				closeBtn : '<div style="position:absolute;top:-24px;right:4px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;"> &nbsp; x &nbsp;</div>',
+			},
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+
+		$(".fancybox-tour360-galeria").fancybox({
+			padding : 6,
+			fitToView	: false,
+			width		: '96%',
+			height		: '96%',
+			tpl: {
+				closeBtn : '<div style="position:absolute;top:-24px;right:4px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;"> &nbsp; x &nbsp;</div>',
+			},
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none',
+			beforeShow: function(){
+				$(".lg-close").click();
+			}
+		});
+
+		$(".fancybox-cadsite").fancybox({
+			padding: 5,
+			minWidth	: 330,
+			minHeight	: 370,
+			maxWidth	: 330,
+			maxHeight	: 370,
+			fitToView	: false,
+			width		: '100%',
+			height		: '100%',
+			type: "iframe",
+			autoSize	: true,
+			closeClick	: false,
+			tpl: {
+				closeBtn : '<div style="position:absolute;top:-24px;right:4px;background-color:#000;border: 2px solid #CCC;border-bottom: 0px;color:#FFF;font-size:22px;cursor:pointer;"> &nbsp; x &nbsp;</div>',
+			},
+			helpers:  {
+				overlay : {
+					closeClick : true
+				},
+			},
+
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+
+	});
+
+	
+	function fancyboxPrint(){
+		var id = $(".fancybox-iframe").attr("id");
+		window.frames[id].print();
+	}
+
+	function disableBtn() {
+
+	    $(".btnContatoForm").attr("disabled", true);
+	    $(".btnContatoForm").text("Enviando...");
+	}
+
+	function ValidaContato(form){
+
+		
+			var nome = $("[name=nome]").val();
+			var ddd = $("[name=ddd]").val();
+			var fone = $("[name=telefone]").val();
+
+			if (!nome.replace(/\s/g, '').length) {
+			  swal({
+					title: "Atenção!",
+					html: "<h5>Informe um valor válido para o nome.</h5>",
+					icon: "warning"
+				});
+			  return false;
+			}else if (!ddd.replace(/\s/g, '').length && ddd.hasAttribute('required')) {
+			  swal({
+					title: "Atenção!",
+					html: "<h5>Informe um valor válido para o DDD.</h5>",
+					icon: "warning"
+				});
+			  return false;
+			}else if (!fone.replace(/\s/g, '').length) {
+			  swal({
+					title: "Atenção!",
+					html: "<h5>Informe um valor válido para o Telefone.</h5>",
+					icon: "warning"
+				});
+			  return false;
+			}else{
+				disableBtn();
+				return true;
+			}
+
+
+
+
+
+
+		
+
+
+	}
+
+	function atualizaDisponibilidades(){
+
+		$.post("reservadoTemporada",
+		{
+			ajax: true,
+			idimovel: $("#idImovelTemporada").val()
+		},
+		function(retorno){
+
+			console.log("Retorno: "+retorno);
+
+			$('.disponibilidade').datepicker({
+		      		      numberOfMonths: 6,
+		      stepMonths: 6,
+		      		      // minDate: new Date(2021,10,01),
+		      maxDate: "+2Y",
+		      dayNamesMin: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'S&aacute;b'] ,
+			  monthNames: ['Janeiro', 'Fevereiro', 'Mar&ccedil;o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'] ,
+			  			  prevText: '<i class="fa fa-chevron-left"></i>',
+			  nextText: '<i class="fa fa-chevron-right"></i>',
+			  			  beforeShowDay: function(date) {
+
+			  	var data = new Date(date);
+			  	var dia = data.getDate();
+			  	var mes = data.getMonth();
+			  	var ano = data.getFullYear();
+
+			  	var objRetorno = JSON.parse(retorno);
+
+			  	var inicioIntervalo = [];
+			  	var ultimoIntervalo = [];
+			  	var aux = "";
+
+				//Pega os iniciais e finais
+			  	$.each(objRetorno,function(index, value){
+			  		var res = value['data_chegada'].split('-');
+			  		var res2 = value['data_saida'].split('-');
+
+			  		var dataInicial = new Date(res[0], res[1]-1, res[2]);
+			  		var dataFinal = new Date(res2[0], res2[1]-1, res2[2]);
+
+			  		inicioIntervalo.push(dataInicial);
+					ultimoIntervalo.push(dataFinal);
+			  	})
+
+			  	//Se for data de início de intervalo
+			  	$(inicioIntervalo).each(function(index, val){
+			  		var dataInicioIntervalo = new Date(val);
+			  		var diaII = dataInicioIntervalo.getDate();
+			  		var mesII = dataInicioIntervalo.getMonth();
+			  		var anoII = dataInicioIntervalo.getFullYear();
+
+			  		if(diaII == dia && mesII == mes && anoII == ano){
+    					aux = 1;
+			  		}
+			  	});
+
+			  	//Se for data de fim de intervalo
+			  	$(ultimoIntervalo).each(function(index, val){
+			  		var dataFimIntervalo = new Date(val);
+			  		var diaFI = dataFimIntervalo.getDate();
+			  		var mesFI = dataFimIntervalo.getMonth();
+			  		var anoFI = dataFimIntervalo.getFullYear();
+
+			  		if(diaFI == dia && mesFI == mes && anoFI == ano){
+			  			//Se já for início também
+			  			if(aux == 1){
+			  				aux = 3;
+			  			}else{
+			  				aux = 2;
+			  			}
+
+			  		}
+			  	});
+
+			  	//Se estiver entre o início do intervalo e o fim do intervalo
+			  	$(inicioIntervalo).each(function(index, val){
+			  		var dataInicioIntervalo = new Date(val);
+			  		var dataFimIntervalo = new Date(ultimoIntervalo[index]);
+
+			  		var timeInicio = dataInicioIntervalo.getTime();
+			  		var timeFim = dataFimIntervalo.getTime();
+			  		var dataTeste = data.getTime();
+
+			  		if(dataTeste > timeInicio && dataTeste < timeFim){
+			  			aux = 3;
+			  		}
+
+
+			  	});
+
+			  	if(aux == 1){
+			  		return[true, "reservadoPrimeiro"];
+			  	}else if(aux == 2){
+			  		return[true, "reservadoUltimo"];
+			  	}else if(aux == 3){
+			  		return[true, "reservado"];
+			  	}else{
+			  		return[true, ""];
+			  	}
+			   }
+		    });
+		  });
+	}</script><script>$(function(){
+	$("#calculaValor").click(function(){
+		var numCub = $("#valorCub").val();
+		var total = (numCub * 3037.72).toFixed(2);
+		$('#retornoTotal').val(total);
+
+		$('#retornoTotal').priceFormat({
+			prefix: '',
+			centsSeparator: ',',
+			thousandsSeparator: '.'
+		});
+	});
+
+	$("#calculaCUB").click(function(){
+		var numCub = $("#valorParaCub").val();
+		numCub = numCub.replace(".", "");
+		numCub = numCub.replace(".", "");
+		numCub = numCub.replace(".", "");
+		numCub = numCub.replace(",", ".");
+
+		var total = (numCub / 3037.72).toFixed(4);
+
+		$('#retornoTotal2').val(total);
+
+		$('#retornoTotal2').priceFormat({
+			prefix: '',
+			suffix: ' cubs',
+			centsSeparator: ',',
+			thousandsSeparator: '.',
+			centsLimit: 4
+		});
+	});
+
+	$('#valorParaCub').priceFormat({
+		prefix: '',
+		centsSeparator: ',',
+		thousandsSeparator: '.'
+	});
+
+	$('input[name=cmp6_NUM]').focusout(function(){
+	    var phone, element;
+	    element = $(this);
+	    element.unmask();
+	    phone = element.val().replace(/\D/g, '');
+	    if(phone.length > 10) {
+	        element.mask("(99) 99999-999?9");
+	    } else {
+	        element.mask("(99) 9999-9999?9");
+	    }
+	}).trigger('focusout');
+});
+
+function go_to_link(link){
+	console.log("go_to_link = "+link);
+	window.location.href = link;
+}
+if($("#video-home").length){
+	var $lgvideo = $("#video-home");
+	$lgvideo.lightGallery({
+		youtubePlayerParams: {
+			modestbranding: 1,
+			showinfo: 0,
+			rel: 0
+		},
+		videoMaxWidth:'1050px'
+	});
+
+	$lgvideo.on('onAfterOpen.lg', function(){
+		$lgvideo.data('lightGallery').modules.fullscreen.requestFullscreen();
+	});
+}
+
+$(".btnVerFotos").click(function(){
+	$(".escondeFoto").attr("style","display: flex !important;");
+	$(".verFotos").hide();
+});
+
+$(".btnVerConstrutoras").click(function(){
+	$(".escondeConstrutoras").attr("style","display: flex !important;");
+	$(".verConstrutoras").hide();
+});
+
+$(".btnVerCondominios").click(function(){
+	$(".escondeCondominios").attr("style","display: flex !important;");
+	$(".verCondominios").hide();
+});
+
+/* Refinar Oculto */
+$(".btnRefinarOculto").click(function(){
+	$(".refinarHorizontal").attr("style","display: block !important;");
+});
+$(".closeRefinarOptions").click(function(){
+	$(".refinarHorizontal").attr("style","display: none !important;");
+});
+
+/* Ordenar Oculto */
+$(".btnOrdenarOculto").click(function(){
+	$(".refinarHorizontalOrdenar").attr("style","display: block !important;");
+});
+$(".closeOrderOptions").click(function(){
+	$(".refinarHorizontalOrdenar").attr("style","display: none !important;");
+});
+
+$(".menu-bairros").click(function(){
+	$(".group-bairros").slideToggle(500);
+});</script><!--  --><script type="text/javascript">var owl = $('.sliderDepoimentosOnlyVideos');
+	owl.owlCarousel({
+		autoPlay: true,
+		navigation: false,
+		slideSpeed: 600,
+		items : 4,
+		itemsDesktop : [1366,3],
+		itemsTablet : [991,3],
+		itemsMobile : [767,1]
+	});
+	$("#sliderDepoimentosOnlyVideos .passador-prev-button").click(function(){
+		$('.sliderDepoimentosOnlyVideos').trigger('owl.prev');
+	});
+
+	$("#sliderDepoimentosOnlyVideos .passador-next-button").click(function(){
+		$('.sliderDepoimentosOnlyVideos').trigger('owl.next');
+	});</script><script type="text/javascript">if( $("#header").hasClass("headerSiga") ){
+	$(window).scroll(function() {
+	    var scroll = $(window).scrollTop();
+	    if (scroll >= 10) {
+	        $(".headerSiga").addClass("flutuanteSiga");
+	    }else{
+	        $(".headerSiga").removeClass("flutuanteSiga");
+	    }
+	});
+}</script><script>function soliciteVisita(){
+		if( !$('.visitaDiasInput').is(':checked') ){
+			swal("Atenção!", "Escolha o dia que deseja solicitar a visita", "error");
+
+		}else if(!$('.visitaTurnoInput').is(':checked')){
+			swal("Atenção!", "Escolha a sua preferência de turno", "error");
+
+		}else if($('[name=nomeCliente]').val() == '' || $('[name=nomeCliente]').val() == null){
+			swal("Atenção!", "Informe seu nome", "error");
+
+		}else if($('[name=dddVisita]').val() == '' || $('[name=dddVisita]').val() == null){
+			swal("Atenção!", "Informe o seu DDD", "error");
+
+
+		}else if($('[name=foneVisita]').val() == '' || $('[name=foneVisita]').val() == null){
+			swal("Atenção!", "Informe seu telefone", "error");
+
+		}else{
+			var dia_visita = '';
+			var turno_visita = '';
+
+			$(".visitaDiasInput").each(function (){
+				if($(this).is(":checked")){
+					dia_visita += $(this).val();
+					dia_visita += ',';
+			    }
+			})
+
+			$(".visitaTurnoInput").each(function (){
+				if($(this).is(":checked")){
+					turno_visita += $(this).val();
+					turno_visita += ',';
+			    }
+			})
+
+			var formVisita = $("#soliciteVisita").serialize();
+			formVisita += '&ajax=true';
+			formVisita += '&dia_visita='+dia_visita;
+			formVisita += '&turno_visita='+turno_visita;
+
+			$.ajax({
+				type: "POST",
+				url: "soliciteVisita",
+				data: formVisita,
+				success: function(response){
+					swal({
+						title: "Visita solicitada com sucesso!",
+						html: "Em breve nossa imobiliária entrará em contato com a confirmação da visita.",
+						type: "success"
+					},
+					function(){
+						location.reload();
+					});
+				}
+			});
+		}
+	}</script><style type="text/css">.moxie-shim.moxie-shim-html5{
+		position: absolute !important;
+	    top: 246px !important;
+	    left: 16px !important;
+	    width: 154px !important;
+	    height: 28px !important;
+	    overflow: hidden !important;
+	    z-index: 1 !important;
+	}</style> <!--INICIO MICRODADOS--><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Calebe Investimentos Imobiliários",
+  "url": "https://www.calebeimoveisitapema.com.br",
+  "logo": "https://d78txhfo8gp8r.cloudfront.net/calebe/arquivos/logo.png",
+  "image": "https://d78txhfo8gp8r.cloudfront.net/calebe/arquivos/logo.png",
+  "address" : [
+    { "@type" : "PostalAddress",
+      "streetAddress" : "Rua 246, 596 Meia Praia",
+      "addressLocality" : "Itapema",
+      "addressRegion" : "SC",
+	    "addressCountry" : [
+	    { "@type" : "Country",
+	      "name" : "Brasil"
+	    } ]
+    } ],
+  "contactPoint" : [
+	    { "@type" : "ContactPoint",
+      "telephone" : "+55 (47) 3361-8100",
+      "contactType" : "customer service"
+    },
+	    { "@type" : "ContactPoint",
+      "telephone" : "+55 (47) 9 9908-5771",
+      "contactType" : "customer service"
+    }
+
+    ]
+  }</script><!--FIM MICRODADOS--><script>$(function (){
+		$('input[name=telefone]').focusout(function(){
+		    var phone, element;
+		    element = $(this);
+		    element.unmask();
+		    phone = element.val().replace(/\D/g, '');
+		    if(phone.length > 10) {
+	        element.mask("(99) 99999-999?9");
+		    } else {
+		        element.mask("(99) 9999-9999?9");
+		    }
+		}).trigger('focusout');
+
+		$('#fone_solicitacao').focusout(function(){
+		    var phone, element;
+		    element = $(this);
+		    element.unmask();
+		    phone = element.val().replace(/\D/g, '');
+		    if(phone.length > 10) {
+	        element.mask("(99) 99999-999?9");
+		    } else {
+		        element.mask("(99) 9999-9999?9");
+		    }
+		}).trigger('focusout');
+	});</script></div><!-- Wrapper / End --></body></html>

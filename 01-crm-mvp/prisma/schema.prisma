@@ -1,0 +1,753 @@
+// =============================================================================
+// CRM Calebe Afiliados — Prisma Schema (MVP)
+// Postgres 14+ com extensões pgcrypto (cripto coluna-level) e citext
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  extensions = [pgcrypto, citext]
+}
+
+// -----------------------------------------------------------------------------
+// ENUMS
+// -----------------------------------------------------------------------------
+
+enum Role {
+  ADMIN
+  BROKER
+  LEGAL
+  SECRETARY
+}
+
+enum BrokerCategory {
+  BRONZE
+  SILVER
+  GOLD
+  DIAMOND
+}
+
+enum BrokerApprovalStatus {
+  PENDING
+  REVIEWING
+  APPROVED
+  DENIED
+  INCOMPLETE
+  CRECI_INVALID
+}
+
+enum CreciStatus {
+  NOT_VERIFIED
+  VALID
+  INVALID
+}
+
+enum LeadStatus {
+  NEW
+  IN_CONTACT
+  QUALIFIED
+  VISIT_SCHEDULED
+  PROPOSAL
+  WON
+  LOST
+}
+
+enum ConversationStatus {
+  OPEN
+  PAUSED
+  CLOSED
+}
+
+enum MessageDirection {
+  IN
+  OUT
+}
+
+enum MessageType {
+  TEXT
+  AUDIO
+  IMAGE
+  VIDEO
+  SYSTEM
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+  OFF_MARKET
+}
+
+enum StructureType {
+  PLANE
+  VEHICLE
+  APARTMENT
+  ACCOMPANIED_VISIT
+}
+
+enum StructureStatus {
+  REQUESTED
+  REVIEWING
+  APPROVED
+  DENIED
+  RESCHEDULE
+  COMPLETED
+}
+
+enum UrgencyLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum VisitStatus {
+  SCHEDULED
+  CONFIRMED
+  REALIZED
+  NO_SHOW
+  RESCHEDULED
+}
+
+enum SaleStatus {
+  DRAFT
+  SUBMITTED
+  IN_LEGAL
+  COMPLETED
+  CANCELLED
+}
+
+enum LegalStatus {
+  RECEIVED
+  REVIEWING
+  DOCS_PENDING
+  DRAFTING
+  READY_TO_SIGN
+  COMPLETED
+}
+
+enum CommissionStatus {
+  PENDING
+  REVIEWING
+  APPROVED
+  PAID
+  BLOCKED
+}
+
+enum NotificationChannel {
+  IN_APP
+  WHATSAPP
+  EMAIL
+}
+
+// -----------------------------------------------------------------------------
+// USERS & AUTH
+// -----------------------------------------------------------------------------
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique @db.Citext
+  passwordHash    String
+  name            String
+  cpf             String?   @unique
+  phone           String?
+  role            Role
+  isActive        Boolean   @default(true)
+  emailVerifiedAt DateTime?
+  lastLoginAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  broker              Broker?
+  termAcceptances     TermAcceptance[]
+  assignedApplications BrokerApplication[] @relation("ReviewedBy")
+  approvedBrokers     Broker[]           @relation("ApprovedBy")
+  creciValidations    Broker[]           @relation("CreciValidatedBy")
+  structureResponses  StructureRequest[] @relation("RespondedBy")
+  confirmedVisits     Visit[]            @relation("VisitConfirmedBy")
+  legalCases          LegalCase[]        @relation("LegalAssignedTo")
+  notifications       Notification[]
+  settingsChanges     SystemSetting[]    @relation("SettingUpdatedBy")
+
+  @@index([role, isActive])
+}
+
+// -----------------------------------------------------------------------------
+// BROKER APPLICATION (LP → fila) e BROKER (após aprovação)
+// -----------------------------------------------------------------------------
+
+model BrokerApplication {
+  id                  String               @id @default(cuid())
+  fullName            String
+  email               String               @db.Citext
+  phone               String
+  cpf                 String
+  rg                  String
+  creci               String
+  creciState          String               @db.VarChar(2)
+  city                String
+  currentAgency       String?
+  yearsMarket         Int?
+  instagram           String?
+  credentialFileUrl   String
+  notes               String?
+  status              BrokerApprovalStatus  @default(PENDING)
+  reviewNotes         String?
+  creciValidated      CreciStatus          @default(NOT_VERIFIED)
+  creciNotes          String?
+  reviewedById        String?
+  reviewedAt          DateTime?
+  deniedReason        String?
+  submittedAt         DateTime             @default(now())
+  ipAddress           String?
+  userAgent           String?
+  createdBroker       Broker?
+
+  reviewedBy          User?   @relation("ReviewedBy", fields: [reviewedById], references: [id])
+
+  @@index([status, submittedAt])
+  @@index([email])
+  @@index([cpf])
+  @@index([creci])
+}
+
+model Broker {
+  id                   String          @id @default(cuid())
+  userId               String          @unique
+  applicationId        String?         @unique
+  category             BrokerCategory  @default(BRONZE)
+  creci                String
+  creciState           String          @db.VarChar(2)
+  creciStatus          CreciStatus     @default(NOT_VERIFIED)
+  creciValidatedById   String?
+  creciValidatedAt     DateTime?
+  creciNotes           String?
+  city                 String
+  currentAgency        String?
+  yearsMarket          Int?
+  instagram            String?
+  approvalStatus       BrokerApprovalStatus @default(APPROVED)
+  approvedById         String?
+  approvedAt           DateTime?
+  hasAcceptedTerm      Boolean         @default(false)
+  welcomeVideoWatched  Boolean         @default(false)
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+
+  user                 User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  application          BrokerApplication? @relation(fields: [applicationId], references: [id])
+  approvedBy           User?           @relation("ApprovedBy", fields: [approvedById], references: [id])
+  creciValidatedBy     User?           @relation("CreciValidatedBy", fields: [creciValidatedById], references: [id])
+
+  leads                Lead[]
+  distributions        LeadDistribution[]
+  conversations        Conversation[]
+  structureRequests    StructureRequest[]
+  visits               Visit[]
+  sales                Sale[]
+  commissions          Commission[]
+  specialEligibility   SpecialPropertyEligibility[]
+
+  @@index([category, approvalStatus])
+  @@index([creciStatus])
+}
+
+// -----------------------------------------------------------------------------
+// TERMO DE ACEITE (versionado + auditado com IP/UA)
+// -----------------------------------------------------------------------------
+
+model TermVersion {
+  id          String           @id @default(cuid())
+  version     String           @unique
+  title       String
+  contentHtml String
+  publishedAt DateTime         @default(now())
+  isCurrent   Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+
+  acceptances TermAcceptance[]
+
+  @@index([isCurrent])
+}
+
+model TermAcceptance {
+  id            String      @id @default(cuid())
+  userId        String
+  termVersionId String
+  acceptedAt    DateTime    @default(now())
+  ipAddress     String
+  userAgent     String
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  termVersion TermVersion @relation(fields: [termVersionId], references: [id])
+
+  @@unique([userId, termVersionId])
+  @@index([acceptedAt])
+}
+
+// -----------------------------------------------------------------------------
+// LEADS (telefone criptografado via pgcrypto) + DISTRIBUIÇÃO
+// -----------------------------------------------------------------------------
+
+model Lead {
+  id                  String     @id @default(cuid())
+  fullName            String
+  maskedName          String
+  phoneEncrypted      Bytes
+  phoneMasked         String
+  phoneHash           String
+  email               String?    @db.Citext
+  source              String
+  channel             String?
+  stage               String?
+  city                String?
+  budgetRange         String?
+  interestType        String?
+  legalBasis          String     @default("legitimate_interest")
+  status              LeadStatus @default(NEW)
+  assignedBrokerId    String?
+  assignedAt          DateTime?
+  notes               String?
+  // Integração externa (webhook + VAI)
+  externalContactId   String?    // id do contato na VAI
+  externalSource      String?    // "webhook_forms", "vai_inbound", etc.
+  campaign            String?
+  campaignId          String?
+  utmSource           String?
+  utmMedium           String?
+  utmCampaign         String?
+  idempotencyKey      String?    @unique
+  webhookLogId        String?
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  assignedBroker      Broker?    @relation(fields: [assignedBrokerId], references: [id])
+  distributions       LeadDistribution[]
+  assignmentEvents    LeadAssignmentEvent[]
+  conversations       Conversation[]
+  structureRequests   StructureRequest[]
+  visits              Visit[]
+  sales               Sale[]
+  webhookLog          WebhookInboundLog? @relation(fields: [webhookLogId], references: [id])
+
+  @@index([assignedBrokerId, status])
+  @@index([phoneHash])
+  @@index([externalContactId])
+  @@index([createdAt])
+}
+
+model LeadDistribution {
+  id               String    @id @default(cuid())
+  brokerId         String
+  leadId           String
+  distributionDate DateTime  @db.Date
+  consumedAt       DateTime?
+
+  broker Broker @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+  lead   Lead   @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@unique([leadId, brokerId])
+  @@index([brokerId, distributionDate])
+}
+
+model LeadDistributionRule {
+  id            String         @id @default(cuid())
+  category      BrokerCategory @unique
+  leadsPerDay   Int
+  effectiveFrom DateTime       @default(now())
+  isActive      Boolean        @default(true)
+  updatedAt     DateTime       @updatedAt
+}
+
+// -----------------------------------------------------------------------------
+// CONVERSA (sem expor telefone) + MENSAGENS
+// -----------------------------------------------------------------------------
+
+model Conversation {
+  id                     String             @id @default(cuid())
+  leadId                 String
+  brokerId               String
+  status                 ConversationStatus @default(OPEN)
+  // Integração VAI — fonte-de-verdade das mensagens
+  vaiAccountId           String?
+  externalConversationId String?            @unique
+  externalContactId      String?
+  lastSyncAt             DateTime?
+  openedAt               DateTime           @default(now())
+  lastMessageAt          DateTime?
+  closedAt               DateTime?
+
+  lead       Lead        @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  broker     Broker      @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+  vaiAccount VaiAccount? @relation(fields: [vaiAccountId], references: [id])
+  messages   Message[]
+
+  @@unique([leadId, brokerId])
+  @@index([brokerId, lastMessageAt])
+  @@index([externalConversationId])
+}
+
+model Message {
+  id                String           @id @default(cuid())
+  conversationId    String
+  externalMessageId String?          @unique
+  direction         MessageDirection
+  type              MessageType
+  contentText       String?
+  mediaUrl          String?
+  mediaMimeType     String?
+  mediaSizeBytes    Int?
+  senderUserId      String?
+  deliveredAt       DateTime?
+  readAt            DateTime?
+  createdAt         DateTime         @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// IMÓVEIS (padrão + especiais com regras de elegibilidade)
+// -----------------------------------------------------------------------------
+
+model Property {
+  id             String          @id @default(cuid())
+  code           String          @unique
+  title          String
+  description    String
+  city           String
+  neighborhood   String?
+  addressFull    String?
+  price          Decimal         @db.Decimal(14, 2)
+  commissionPct  Decimal         @db.Decimal(5, 2)
+  status         PropertyStatus  @default(AVAILABLE)
+  type           String
+  bedrooms       Int?
+  bathrooms      Int?
+  parkingSpots   Int?
+  areaM2         Decimal?        @db.Decimal(8, 2)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  media          PropertyMedia[]
+  specialOffer   SpecialProperty?
+  structureRequests StructureRequest[]
+  visits         Visit[]
+  sales          Sale[]
+
+  @@index([status, city])
+}
+
+model PropertyMedia {
+  id         String @id @default(cuid())
+  propertyId String
+  url        String
+  type       String // photo | floorplan | video | document
+  position   Int    @default(0)
+  caption    String?
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId, position])
+}
+
+model SpecialProperty {
+  propertyId           String   @id
+  specialCommissionPct Decimal  @db.Decimal(5, 2)
+  partnerName          String?
+  specialCondition     String?
+  isOpenToAll          Boolean  @default(true)
+  activeFrom           DateTime @default(now())
+  activeUntil          DateTime?
+
+  property     Property                     @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  eligibility  SpecialPropertyEligibility[]
+}
+
+model SpecialPropertyEligibility {
+  specialPropertyId String
+  brokerId          String
+
+  specialProperty SpecialProperty @relation(fields: [specialPropertyId], references: [propertyId], onDelete: Cascade)
+  broker          Broker          @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+
+  @@id([specialPropertyId, brokerId])
+}
+
+// -----------------------------------------------------------------------------
+// ESTRUTURA PREMIUM (avião, veículo, apartamento, visita acompanhada)
+// -----------------------------------------------------------------------------
+
+model StructureRequest {
+  id              String          @id @default(cuid())
+  brokerId        String
+  leadId          String?
+  propertyId      String?
+  type            StructureType
+  requestedDate   DateTime        @db.Date
+  requestedTime   String?         @db.VarChar(5) // "HH:mm"
+  city            String
+  justification   String
+  urgency         UrgencyLevel    @default(MEDIUM)
+  notes           String?
+  status          StructureStatus @default(REQUESTED)
+  adminResponse   String?
+  respondedById   String?
+  respondedAt     DateTime?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  broker      Broker    @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+  lead        Lead?     @relation(fields: [leadId], references: [id])
+  property    Property? @relation(fields: [propertyId], references: [id])
+  respondedBy User?     @relation("RespondedBy", fields: [respondedById], references: [id])
+
+  @@index([status, createdAt])
+  @@index([brokerId, status])
+}
+
+// -----------------------------------------------------------------------------
+// VISITAS (com confirmação operacional do admin)
+// -----------------------------------------------------------------------------
+
+model Visit {
+  id                  String      @id @default(cuid())
+  brokerId            String
+  leadId              String
+  propertyId          String
+  scheduledAt         DateTime
+  status              VisitStatus @default(SCHEDULED)
+  adminConfirmed      Boolean     @default(false)
+  adminConfirmedById  String?
+  adminConfirmedAt    DateTime?
+  notes               String?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  broker            Broker   @relation(fields: [brokerId], references: [id], onDelete: Cascade)
+  lead              Lead     @relation(fields: [leadId], references: [id])
+  property          Property @relation(fields: [propertyId], references: [id])
+  adminConfirmedBy  User?    @relation("VisitConfirmedBy", fields: [adminConfirmedById], references: [id])
+
+  @@index([brokerId, scheduledAt])
+  @@index([status])
+}
+
+// -----------------------------------------------------------------------------
+// VENDAS → JURÍDICO → COMISSÃO
+// -----------------------------------------------------------------------------
+
+model Sale {
+  id                  String     @id @default(cuid())
+  brokerId            String
+  leadId              String
+  propertyId          String
+  saleValue           Decimal    @db.Decimal(14, 2)
+  negotiationType     String
+  clientDataEncrypted Bytes      // pgp_sym_encrypt(json, DATA_ENCRYPTION_KEY)
+  notes               String?
+  status              SaleStatus @default(DRAFT)
+  submittedAt         DateTime?
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  broker     Broker         @relation(fields: [brokerId], references: [id])
+  lead       Lead           @relation(fields: [leadId], references: [id])
+  property   Property       @relation(fields: [propertyId], references: [id])
+  documents  SaleDocument[]
+  legalCase  LegalCase?
+  commission Commission?
+
+  @@index([brokerId, status])
+  @@index([status, submittedAt])
+}
+
+model SaleDocument {
+  id           String   @id @default(cuid())
+  saleId       String
+  filename     String
+  url          String
+  mimeType     String
+  sizeBytes    Int
+  uploadedById String
+  uploadedAt   DateTime @default(now())
+
+  sale Sale @relation(fields: [saleId], references: [id], onDelete: Cascade)
+
+  @@index([saleId])
+}
+
+model LegalCase {
+  id             String      @id @default(cuid())
+  saleId         String      @unique
+  status         LegalStatus @default(RECEIVED)
+  legalNotes     String?
+  assignedToId   String?
+  receivedAt     DateTime    @default(now())
+  completedAt    DateTime?
+  updatedAt      DateTime    @updatedAt
+
+  sale       Sale  @relation(fields: [saleId], references: [id], onDelete: Cascade)
+  assignedTo User? @relation("LegalAssignedTo", fields: [assignedToId], references: [id])
+
+  @@index([status, receivedAt])
+}
+
+model Commission {
+  id            String            @id @default(cuid())
+  saleId        String            @unique
+  brokerId      String
+  grossValue    Decimal           @db.Decimal(14, 2)
+  netValue      Decimal           @db.Decimal(14, 2)
+  status        CommissionStatus  @default(PENDING)
+  dueDate       DateTime?         @db.Date
+  paidAt        DateTime?
+  receiptUrl    String?
+  notes         String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  sale   Sale   @relation(fields: [saleId], references: [id], onDelete: Cascade)
+  broker Broker @relation(fields: [brokerId], references: [id])
+
+  @@index([brokerId, status])
+  @@index([status, dueDate])
+}
+
+// -----------------------------------------------------------------------------
+// WEBHOOK INBOUND (leads externos) + HISTÓRICO DE DISTRIBUIÇÃO
+// -----------------------------------------------------------------------------
+
+enum WebhookStatus {
+  RECEIVED
+  PROCESSING
+  PROCESSED
+  FAILED
+  REJECTED
+}
+
+model WebhookInboundLog {
+  id               String        @id @default(cuid())
+  source           String        // "landing_page", "meta_ads", "google_ads", "partner_x"
+  endpoint         String        // "/api/webhooks/leads" | "/api/webhooks/vai"
+  rawPayload       Json
+  headers          Json?
+  signature        String?
+  ipAddress        String?
+  idempotencyKey   String?       @unique
+  status           WebhookStatus @default(RECEIVED)
+  processedAt      DateTime?
+  errorMessage     String?
+  resultingLeadId  String?
+  receivedAt       DateTime      @default(now())
+
+  resultingLead Lead[]
+
+  @@index([source, receivedAt])
+  @@index([status, receivedAt])
+}
+
+enum LeadAssignmentEventType {
+  ASSIGNED
+  REASSIGNED
+  UNASSIGNED
+  RETURNED
+  BLOCKED
+}
+
+model LeadAssignmentEvent {
+  id            String                   @id @default(cuid())
+  leadId        String
+  brokerId      String?                  // null quando evento é "returned to pool"
+  event         LeadAssignmentEventType
+  reason        String?
+  actorUserId   String?                  // null quando evento automático
+  occurredAt    DateTime                 @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId, occurredAt])
+  @@index([brokerId, occurredAt])
+}
+
+// -----------------------------------------------------------------------------
+// VAI ACCOUNT (conta/instância do provedor de WhatsApp)
+// -----------------------------------------------------------------------------
+
+model VaiAccount {
+  id                String   @id @default(cuid())
+  name              String
+  instanceId        String   @unique
+  apiTokenEncrypted Bytes    // pgp_sym_encrypt do token
+  webhookSecret     String
+  senderPhone       String?
+  baseUrl           String   @default("https://api.vaicrm.com.br")
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  conversations Conversation[]
+}
+
+// -----------------------------------------------------------------------------
+// NOTIFICAÇÕES (in-app + WhatsApp via VAI)
+// -----------------------------------------------------------------------------
+
+model Notification {
+  id                  String                @id @default(cuid())
+  userId              String
+  type                String
+  title               String
+  body                String
+  link                String?
+  channels            NotificationChannel[] @default([IN_APP])
+  readAt              DateTime?
+  whatsappDeliveredAt DateTime?
+  whatsappError       String?
+  createdAt           DateTime              @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+  @@index([createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// AUDIT EVENTS (IMUTÁVEL — UPDATE/DELETE bloqueados via trigger Postgres)
+// -----------------------------------------------------------------------------
+
+model AuditEvent {
+  id          String   @id @default(cuid())
+  actorUserId String?
+  actorRole   String?
+  action      String
+  entityType  String
+  entityId    String?
+  metadata    Json?
+  ipAddress   String?
+  userAgent   String?
+  occurredAt  DateTime @default(now())
+
+  @@index([actorUserId, occurredAt])
+  @@index([entityType, entityId])
+  @@index([occurredAt])
+}
+
+// -----------------------------------------------------------------------------
+// SYSTEM SETTINGS (chave-valor para regras parametrizáveis)
+// -----------------------------------------------------------------------------
+
+model SystemSetting {
+  key         String   @id
+  value       Json
+  description String?
+  updatedById String?
+  updatedAt   DateTime @updatedAt
+
+  updatedBy User? @relation("SettingUpdatedBy", fields: [updatedById], references: [id])
+}

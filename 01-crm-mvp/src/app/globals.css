@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================================
+   Brand — Calebe Imóveis
+   Tipografia única: Plus Jakarta Sans (300-800). Moderna, premium, tecnológica.
+   Paleta: Navy (primary) + Gold (accent) + Sand (warm neutral).
+   ============================================================================= */
+
+@layer base {
+  :root {
+    --app-bg: #0B0E13;
+    --app-elevated: #131720;
+    --app-subtle: #161B25;
+    --app-canvas: #0B0E13;
+    --app-fg: #E8EAEF;
+    --app-fg-muted: #9097A5;
+    --app-fg-subtle: #5F6779;
+    --app-border: #232A37;
+    --app-border-strong: #2F3848;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans), "Plus Jakarta Sans", -apple-system, system-ui, sans-serif;
+    color: var(--app-fg);
+    background-color: var(--app-bg);
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(44, 86, 128, 0.18) 0%, transparent 60%),
+      linear-gradient(180deg, #081A2E 0%, #0B0E13 45%, #04101F 100%);
+    background-attachment: fixed;
+    min-height: 100dvh;
+    font-weight: 400;
+  }
+
+  ::selection {
+    background: rgba(201, 169, 97, 0.9);
+    color: #04101F;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+    letter-spacing: -0.028em;
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  p { line-height: 1.6; }
+}
+
+@layer components {
+  .container-site {
+    @apply max-w-container mx-auto px-6 md:px-10;
+  }
+
+  .divider-gold {
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.55), transparent);
+    height: 1px;
+  }
+
+  .hairline { border-color: var(--app-border); }
+  .hairline-strong { border-color: var(--app-border-strong); }
+
+  /* META / LABELS / PILLS — Plus Jakarta uppercase com tracking */
+  .meta-label {
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-sand-100/60;
+  }
+  .meta-value {
+    @apply text-xs font-semibold text-gold-400 tracking-[0.04em];
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-gold-300;
+  }
+  .pill-section {
+    @apply inline-block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-400/80;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 font-semibold tracking-[0.04em] text-[0.86rem] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded-[4px];
+  }
+  .btn-gold {
+    @apply btn-base bg-gold-gradient text-navy-950 px-7 py-[0.85rem] shadow-gold-glow hover:shadow-elev-3 hover:-translate-y-[1px] active:translate-y-0;
+  }
+  .btn-outline {
+    @apply btn-base border border-gold-400/40 text-gold-300 px-7 py-[0.85rem] hover:bg-gold-400/8 hover:border-gold-400/70;
+  }
+  .btn-navy {
+    @apply btn-base bg-navy-700 text-sand-50 px-7 py-[0.85rem] hover:bg-navy-600 border border-navy-600;
+  }
+
+  .field-label {
+    @apply block text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-sand-100/70 mb-2;
+  }
+  .field-input {
+    @apply w-full bg-app-subtle/70 border hairline rounded-[4px] px-4 py-3 text-sand-50 placeholder:text-sand-100/25 focus:border-gold-400/70 focus:bg-app-subtle focus:outline-none focus:ring-0 transition-colors text-[0.95rem] font-normal;
+  }
+
+  .card {
+    @apply bg-app-elevated border hairline rounded-[4px] transition-colors;
+  }
+  .card:hover {
+    @apply border-gold-400/20;
+  }
+}

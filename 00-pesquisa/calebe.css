@@ -1,0 +1,16 @@
+@import url("calebe_cabecalho.css?nc=017-2021");
+@import url("calebe_cor.css?nc=017-2021");
+@import url("calebe_cor_mobile.css?nc=017-2021");
+@import url("calebe_conteudo.css?nc=017-2021");
+@import url("calebe_conteudo_mobile.css?nc=017-2021");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* PG Imovel: descricao e caracteristicas */
+#tabs-container a.card-link, #tabs-container #accordion .card {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+#tabs-container .card-body, .property-features.checkboxes li {
+    color: #fff !important;
+}
