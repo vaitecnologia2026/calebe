@@ -43,11 +43,12 @@ export const brokerApplicationSchema = z.object({
   yearsMarket: z.coerce.number().int().min(0).max(80).optional(),
   instagram: z.string().max(60).optional().or(z.literal("")),
   credentialFileUrl: z
-    .string()
-    .optional()
-    .or(z.literal(""))
-    .transform((v) => (v && v.length > 0 ? v : null))
-    .refine((v) => v === null || /^https?:\/\//.test(v), "URL do comprovante inválida."),
+    .any()
+    .transform((v) => (typeof v === "string" && v.length > 0 ? v : null))
+    .refine(
+      (v) => v === null || /^https?:\/\//.test(v),
+      "URL do comprovante inválida."
+    ),
   notes: z.string().max(1000).optional().or(z.literal(""))
 });
 
