@@ -2,11 +2,28 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { requireRole } from "@/lib/rbac";
 import { AppShell } from "@/components/app/AppShell";
+import { db } from "@/lib/db";
 
 export const metadata = { title: "Secretaria — Calebe" };
+export const dynamic = "force-dynamic";
 
 export default async function SecretariaDashboard() {
   const user = await requireRole(["SECRETARY", "ADMIN"]);
+
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const todayEnd = new Date(todayStart);
+  todayEnd.setDate(todayEnd.getDate() + 1);
+
+  const [estruturaPending, visitasHoje, visitasAConfirmar, estruturaReagendar] = await Promise.all(
+    [
+      db.structureRequest.count({ where: { status: { in: ["REQUESTED", "REVIEWING"] } } }),
+      db.visit.count({ where: { scheduledAt: { gte: todayStart, lt: todayEnd } } }),
+      db.visit.count({ where: { status: "SCHEDULED" } }),
+      db.structureRequest.count({ where: { status: "RESCHEDULE" } })
+    ]
+  );
+
   return (
     <AppShell role="SECRETARY" userName={user.name}>
       <header className="mb-8">
@@ -22,10 +39,10 @@ export default async function SecretariaDashboard() {
       </header>
       <section className="grid grid-cols-2 md:grid-cols-4 tv:grid-cols-8 gap-3 lg:gap-4 tv:gap-5">
         {[
-          { label: "Estrutura pendente", value: "6" },
-          { label: "Visitas hoje", value: "12" },
-          { label: "A confirmar", value: "5" },
-          { label: "Reagendamentos", value: "2" }
+          { label: "Estrutura pendente", value: estruturaPending },
+          { label: "Visitas hoje", value: visitasHoje },
+          { label: "A confirmar", value: visitasAConfirmar },
+          { label: "Reagendamentos", value: estruturaReagendar }
         ].map((k) => (
           <div key={k.label} className="card p-5">
             <p className="text-[0.68rem] uppercase tracking-[0.14em] font-medium text-sand-100/55">
@@ -36,7 +53,10 @@ export default async function SecretariaDashboard() {
         ))}
       </section>
       <section className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Link href="/app/secretaria/estrutura" className="card p-6 hover:border-gold-400/40 transition-colors">
+        <Link
+          href="/app/secretaria/estrutura"
+          className="card p-6 hover:border-gold-400/40 transition-colors"
+        >
           <p className="text-[0.7rem] uppercase tracking-[0.14em] font-medium text-gold-400/80 mb-2">
             Fila operacional
           </p>
@@ -45,7 +65,10 @@ export default async function SecretariaDashboard() {
             Abrir fila <ArrowRight size={14} />
           </span>
         </Link>
-        <Link href="/app/secretaria/visitas" className="card p-6 hover:border-gold-400/40 transition-colors">
+        <Link
+          href="/app/secretaria/visitas"
+          className="card p-6 hover:border-gold-400/40 transition-colors"
+        >
           <p className="text-[0.7rem] uppercase tracking-[0.14em] font-medium text-gold-400/80 mb-2">
             Agenda
           </p>
