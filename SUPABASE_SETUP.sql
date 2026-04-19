@@ -787,16 +787,6 @@ ALTER TABLE "Notification" ADD CONSTRAINT "Notification_userId_fkey" FOREIGN KEY
 -- AddForeignKey
 ALTER TABLE "SystemSetting" ADD CONSTRAINT "SystemSetting_updatedById_fkey" FOREIGN KEY ("updatedById") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
-┌─────────────────────────────────────────────────────────┐
-│  Update available 5.22.0 -> 7.7.0                       │
-│                                                         │
-│  This is a major update - please follow the guide at    │
-│  https://pris.ly/d/major-version-upgrade                │
-│                                                         │
-│  Run the following to update                            │
-│    npm i --save-dev prisma@latest                       │
-│    npm i @prisma/client@latest                          │
-└─────────────────────────────────────────────────────────┘
 -- =============================================================================
 -- Auditoria imutável: bloquear UPDATE e DELETE em audit_events
 -- =============================================================================
@@ -839,13 +829,13 @@ INSERT INTO "User" (id, email, "passwordHash", name, role, "createdAt", "updated
 
 INSERT INTO "Broker" (id, "userId", creci, "creciState", city, category, "hasAcceptedTerm", "createdAt", "updatedAt") SELECT '8065129e-830d-4b8b-bddb-5e13b2efc70f', id, '0000', 'SC', 'Itapema', 'GOLD', false, NOW(), NOW() FROM "User" WHERE email='corretor@calebe.com.br' ON CONFLICT ("userId") DO NOTHING;
 
-INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "createdAt", "updatedAt") VALUES ('bc7ec346-e5c1-4e02-9241-230b225ddee3', 'BRONZE', 1, true, NOW(), NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=1, "isActive"=true;
-INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "createdAt", "updatedAt") VALUES ('c436a7de-69d0-4952-967d-d163dbbdb8f0', 'SILVER', 2, true, NOW(), NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=2, "isActive"=true;
-INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "createdAt", "updatedAt") VALUES ('6647d3b1-33eb-4589-8cb8-952118fb1567', 'GOLD', 3, true, NOW(), NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=3, "isActive"=true;
-INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "createdAt", "updatedAt") VALUES ('114c897a-e9d2-40e9-9433-dd3619ceabb2', 'DIAMOND', 5, true, NOW(), NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=5, "isActive"=true;
+INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "updatedAt") VALUES ('bc7ec346-e5c1-4e02-9241-230b225ddee3', 'BRONZE', 1, true, NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=1, "isActive"=true;
+INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "updatedAt") VALUES ('c436a7de-69d0-4952-967d-d163dbbdb8f0', 'SILVER', 2, true, NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=2, "isActive"=true;
+INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "updatedAt") VALUES ('6647d3b1-33eb-4589-8cb8-952118fb1567', 'GOLD', 3, true, NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=3, "isActive"=true;
+INSERT INTO "LeadDistributionRule" (id, category, "leadsPerDay", "isActive", "updatedAt") VALUES ('114c897a-e9d2-40e9-9433-dd3619ceabb2', 'DIAMOND', 5, true, NOW()) ON CONFLICT (category) DO UPDATE SET "leadsPerDay"=5, "isActive"=true;
 
 INSERT INTO "TermVersion" (id, version, title, "contentHtml", "isCurrent", "createdAt") VALUES ('127dd8db-1f8d-4c46-b24d-66caa50d42c2', '1.0.0', 'Termo de Adesão do Corretor Afiliado Calebe', '<h2>Termo de Adesão — Corretor Afiliado Calebe</h2><ol><li>Os leads distribuídos pertencem operacionalmente à Calebe.</li><li>Toda interação é registrada e auditada.</li><li>É vedada a tentativa de obter o telefone real do cliente fora da plataforma.</li><li>O corretor compromete-se a seguir o processo oficial.</li><li>Violações implicam em desligamento imediato e responsabilização legal.</li></ol>', true, NOW()) ON CONFLICT (version) DO UPDATE SET "isCurrent"=true;
 
-INSERT INTO "SystemSetting" (id, key, value, description, "updatedAt") VALUES ('2f7baa7d-218c-401c-8da7-5870ed46bd83', 'onboarding.welcome_video_url', '""'::jsonb, 'URL do vídeo de boas-vindas no primeiro login.', NOW()) ON CONFLICT (key) DO NOTHING;
-INSERT INTO "SystemSetting" (id, key, value, description, "updatedAt") VALUES ('629bb274-7787-4254-9768-93f31ae6009e', 'broker.default_category', '"BRONZE"'::jsonb, 'Categoria default para corretor recém-aprovado.', NOW()) ON CONFLICT (key) DO NOTHING;
-INSERT INTO "SystemSetting" (id, key, value, description, "updatedAt") VALUES ('765da075-cef9-42f9-bb30-c29e3474fe43', 'lead.distribution.algorithm', '"round_robin_category"'::jsonb, 'Algoritmo de distribuição de leads.', NOW()) ON CONFLICT (key) DO NOTHING;
+INSERT INTO "SystemSetting" (key, value, description, "updatedAt") VALUES ('onboarding.welcome_video_url', '""'::jsonb, 'URL do vídeo de boas-vindas no primeiro login.', NOW()) ON CONFLICT (key) DO NOTHING;
+INSERT INTO "SystemSetting" (key, value, description, "updatedAt") VALUES ('broker.default_category', '"BRONZE"'::jsonb, 'Categoria default para corretor recém-aprovado.', NOW()) ON CONFLICT (key) DO NOTHING;
+INSERT INTO "SystemSetting" (key, value, description, "updatedAt") VALUES ('lead.distribution.algorithm', '"round_robin_category"'::jsonb, 'Algoritmo de distribuição de leads.', NOW()) ON CONFLICT (key) DO NOTHING;
