@@ -88,7 +88,7 @@ export function ApplicationForm() {
       currentAgency: String(formData.get("currentAgency") ?? "").trim(),
       yearsMarket: formData.get("yearsMarket") ? Number(formData.get("yearsMarket")) : undefined,
       instagram: String(formData.get("instagram") ?? "").trim(),
-      credentialFileUrl: uploadedFile?.url ?? "",
+      credentialFileUrl: uploadedFile?.url ?? null,
       notes: String(formData.get("notes") ?? "").trim()
     };
 
