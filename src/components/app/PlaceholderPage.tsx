@@ -24,11 +24,22 @@ export function PlaceholderPage({
       </header>
       <div className="card p-10 text-center">
         <p className="text-[0.72rem] uppercase tracking-[0.16em] font-medium text-gold-400/80 mb-3">
-          Em construção
+          Prévia interativa disponível
         </p>
-        <p className="text-sand-100/70 max-w-md mx-auto">
+        <p className="text-sand-100/70 max-w-md mx-auto mb-6">
           {description ??
-            "Este módulo está sendo implementado. Volte em breve para acessar suas funcionalidades."}
+            "Este módulo está sendo migrado para o sistema real. Enquanto isso, explore a prévia completa de funcionalidades — navegação, tabelas, Kanban jurídico, chat, modais e fluxos de aprovação."}
+        </p>
+        <a
+          href="/demo.html"
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-2 rounded-[2px] bg-gold-gradient px-6 py-3 text-navy-950 text-[0.8rem] uppercase tracking-[0.14em] font-bold hover:opacity-90 transition-opacity"
+        >
+          Abrir prévia completa →
+        </a>
+        <p className="text-[0.65rem] uppercase tracking-[0.12em] text-sand-100/45 mt-4">
+          Abre em nova aba · senha demo: Calebe@2026!
         </p>
       </div>
     </AppShell>
